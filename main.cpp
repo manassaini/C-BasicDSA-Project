@@ -1,7 +1,12 @@
 #include <iostream>
+#include <stack>
 using namespace std;
+#include "Stack.h"
+#include "Stack.cpp"
 
 int main() {
-    cout << "Let's start this project!";
+    Stack s;
+    s.stackIntro();
+
     return 0;
 }
