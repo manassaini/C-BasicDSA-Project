@@ -73,6 +73,33 @@ public:
         printQueue(q);
     }
 
+    void showModifyQueueCode(){
+        cout << "void modifyQueue(queue<int> q, int k){" << endl;
+        cout << "stack<int>s;" << endl;
+        cout << "int queueSize = q.size();" << endl;
+        cout << "int arr[q.size()];" << endl;
+        cout << " for (int i = 0; i < queueSize - k; ++i){" << endl;
+        cout << "     arr[i] = q.front();" << endl;
+        cout << "     q.pop();" << endl;
+        cout << " }" << endl;
+        cout << "  while (!q.empty()){" << endl;
+        cout << "      s.push(q.front());" << endl;
+        cout << "      q.pop();" << endl;
+        cout << " }" << endl;
+        cout << " for (int i = (queueSize-k) - 1; i >= 0; --i){" << endl;
+        cout << "      s.push(arr[i]);" << endl;
+        cout << "  }" << endl;
+        cout << "  while (!s.empty()){" << endl;
+        cout << "      q.push(s.top());" << endl;
+        cout << "      s.pop();" << endl;
+        cout << "  }" << endl;
+
+        cout << "  printQueue(q);" << endl;
+        cout << "}" << endl;
+    }
+
+
+
     void interLeave(queue<int>q){
         int queueSize = q.size();
         stack<int>firstHalf;

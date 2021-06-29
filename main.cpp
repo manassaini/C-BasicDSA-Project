@@ -8,7 +8,10 @@ using namespace std;
 
 int main() {
     Stack s;
-    s.showGreaterRightCode();
+   // s.showGreaterRightCode();
+    Queue q;
+    q.showModifyQueueCode();
+
 
     return 0;
 }
