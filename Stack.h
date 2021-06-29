@@ -103,6 +103,37 @@ public:
         }
     }
 
+    void greaterRight(int arr[], int size){
+        //push first element in stack
+        //push second element, see if it's less than stack.top()
+        //if it is, push that element as well
+        //if not, stack.pop(), and stack.push(), the greater number is now in stack
+        stack<int>nums;
+        nums.push(arr[0]);
+        for (int i = 1; i < size; ++i){
+            if (arr[i] < nums.top()){
+                nums.push(arr[i]);
+            }
+            else if (arr[i] > nums.top()){
+                nums.pop();
+                if (nums.empty()) {
+                    nums.push(arr[i]);
+                    continue;
+                }
+                if (arr[i] > nums.top()){
+                    nums.pop();
+                }
+                else {
+                    nums.push(arr[i]);
+                }
+            }
+        }
+        while (!nums.empty()){
+            cout << nums.top() << " ";
+            nums.pop();
+        }
+    }
+
 
 };
 
