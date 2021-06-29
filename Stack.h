@@ -22,6 +22,27 @@ public:
         cout << nums.top() << endl; //now should print 4
     }
 
+    bool balanced(string str){
+        //if open, push to stack
+        //if close, check if top is a match
+        //if the top is a match, then pop the top
+        stack<char>braces;
+        for (char c: str){
+            if (c == '{' || c == '[' || c == '('){
+                braces.push(c);
+            }
+            else {
+                if ((c == '}' && braces.top() == '{') || (c == ']' && braces.top() == '[') ||
+                    c == ')' && braces.top() == '(') {
+                    braces.pop();
+                }
+            }
+        }
+        return braces.empty();
+    }
+
+
+
 };
 
 
