@@ -8,7 +8,7 @@ using namespace std;
 
 int main() {
     Stack s;
-    s.showPostFixCode();
+    s.showReverseArrayCode();
 
     return 0;
 }

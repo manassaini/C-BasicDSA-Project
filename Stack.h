@@ -158,6 +158,24 @@ public:
         }
     }
 
+    void showReverseArrayCode(){
+        cout << "void reverseArray(int arr[], int size){" << endl;
+        cout << "    stack<int>nums;" << endl;
+        cout << "    for (int i = 0; i < size; ++i){" << endl;
+        cout << "        nums.push(arr[i]);" << endl;
+        cout << "    }" << endl;
+        cout << "    int index = 0;" << endl;
+        cout << "    while (!nums.empty()){" << endl;
+        cout << "        arr[index] = nums.top();" << endl;
+        cout << "        nums.pop();" << endl;
+        cout << "        index++;" << endl;
+        cout << "    }" << endl;
+        cout << "    for (int i = 0; i < size; ++i){" << endl;
+        cout << "        cout << arr[i] << " ";" << endl;
+        cout << "    }" << endl;
+        cout << "}" << endl;
+    }
+
     void greaterRight(int arr[], int size){
         //push first element in stack
         //push second element, see if it's less than stack.top()
