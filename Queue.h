@@ -7,7 +7,7 @@
 
 #endif //C__BASICDSA_QUEUE_H
 
-#include <queue>d
+#include <queue>
 
 class Queue{
 public:

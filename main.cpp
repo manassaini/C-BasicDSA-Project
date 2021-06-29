@@ -8,7 +8,7 @@ using namespace std;
 
 int main() {
     Stack s;
-    s.stackIntro();
+    s.showBalancedCode();
 
     return 0;
 }

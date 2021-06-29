@@ -11,36 +11,41 @@
 class Stack {
 
 public:
-    void stackIntro(){
-        stack<int>nums;
-        nums.push(1);
-        nums.push(2);
-        nums.push(3);
-        nums.push(4);
-        nums.push(5);
-
-        cout << nums.top() << endl;  //should print 5
-        nums.pop(); //remove the top element
-        cout << nums.top() << endl; //now should print 4
-    }
-
     bool balanced(string str){
         //if open, push to stack
         //if close, check if top is a match
         //if the top is a match, then pop the top
         stack<char>braces;
-        for (char c: str){
-            if (c == '{' || c == '[' || c == '('){
+        for (char c: str){      //traverse through the string
+            if (c == '{' || c == '[' || c == '('){      //if an open brace is found, push it to the stack
                 braces.push(c);
             }
             else {
+                //closing brace is found so make sure the top of the stack matches with the closing brace
                 if ((c == '}' && braces.top() == '{') || (c == ']' && braces.top() == '[') ||
                     c == ')' && braces.top() == '(') {
-                    braces.pop();
+                    braces.pop();   //and if it does, pop the open brace and continue
                 }
             }
         }
-        return braces.empty();
+        return braces.empty();      //if a match is found for every pair, the stack will be empty
+    }
+
+    void showBalancedCode(){
+        cout << "bool balanced(string str){" << endl;
+        cout << "    stack<char>braces;" << endl;
+        cout << "    for (char c: str) {" << endl;
+        cout << "        if (c == '{' || c == '[' || c == '('){" << endl;
+        cout << "            braces.push(c);" << endl;
+        cout << "        else {" << endl;
+        cout << "           if ((c == '}' && braces.top() == '{') || (c == ']' && braces.top() == '[') ||" << endl;
+        cout << "               c == ')' && braces.top() == '(') {" << endl;
+        cout << "               braces.pop();" << endl;
+        cout << "           }" << endl;
+        cout << "        }" << endl;
+        cout << "     }" << endl;
+        cout << "     return braces.empty();" << endl;
+        cout << "}";
     }
 
     int postfix(string str){
