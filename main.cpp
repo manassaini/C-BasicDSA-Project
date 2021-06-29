@@ -8,7 +8,7 @@ using namespace std;
 
 int main() {
     Stack s;
-    s.showReverseArrayCode();
+    s.showGreaterRightCode();
 
     return 0;
 }

@@ -207,6 +207,39 @@ public:
         }
     }
 
+    void showGreaterRightCode(){
+        cout << "void greaterRight(int arr[], int size){" << endl;
+            //push first element in stack
+            //push second element, see if it's less than stack.top()
+            //if it is, push that element as well
+            //if not, stack.pop(), and stack.push(), the greater number is now in stack
+        cout << "    stack<int>nums;" << endl;
+        cout << "    nums.push(arr[0]);" << endl;
+        cout << "    for (int i = 1; i < size; ++i){" << endl;
+        cout << "        if (arr[i] < nums.top()){" << endl;
+        cout << "            nums.push(arr[i]);" << endl;
+        cout << "        }" << endl;
+        cout << "        else if (arr[i] > nums.top()){" << endl;
+        cout << "            nums.pop();" << endl;
+        cout << "            if (nums.empty()) {" << endl;
+        cout << "                nums.push(arr[i]);" << endl;
+        cout << "                continue;" << endl;
+        cout << "            }" << endl;
+        cout << "            if (arr[i] > nums.top()){" << endl;
+        cout << "                nums.pop();" << endl;
+        cout << "            }" << endl;
+        cout << "            else {" << endl;
+        cout << "                nums.push(arr[i]);" << endl;
+        cout << "            }" << endl;
+        cout << "        }" << endl;
+        cout << "    }" << endl;
+        cout << "    while (!nums.empty()){" << endl;
+        cout << "        cout << nums.top() << " ";" << endl;
+        cout << "        nums.pop();" << endl;
+        cout << "    }" << endl;
+        cout << "}" << endl;
+    }
+
 
 };
 
