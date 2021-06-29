@@ -34,6 +34,22 @@ public:
         return q;
     }
 
+    void showRevCode(){
+        cout << "queue<int> rev(queue<int> q){" << endl;
+        cout << "    stack<int>temp;" << endl;
+        cout << "    while (!q.empty()){" << endl;
+        cout << "        temp.push(q.front());" << endl;
+        cout << "        q.pop();" << endl;
+        cout << "    }" << endl;
+        cout << "    while (!temp.empty()){" << endl;
+        cout << "        q.push(temp.top());" << endl;
+        cout << "        temp.pop();" << endl;
+        cout << "    }" << endl;
+
+        cout << "    return q;" << endl;
+        cout << "}" << endl;
+    }
+
     void modifyQueue(queue<int> q, int k){
         stack<int>s;
         int queueSize = q.size();
