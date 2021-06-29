@@ -57,4 +57,38 @@ public:
         printQueue(q);
     }
 
+    void interLeave(queue<int>q){
+        int queueSize = q.size();
+        stack<int>firstHalf;
+        stack<int>secondHalf;
+        for (int i = 0; i < queueSize; ++i){
+            if (i < queueSize/2){
+                secondHalf.push(q.front());
+                q.pop();
+            }
+            else{
+                firstHalf.push(q.front());
+                q.pop();
+            }
+        }
+
+        for (int i = 0; i < queueSize/2; ++i){
+            q.push(firstHalf.top());
+            q.push(secondHalf.top());
+            firstHalf.pop();
+            secondHalf.pop();
+        }
+
+        while (!q.empty()){
+            firstHalf.push(q.front());
+            q.pop();
+        }
+        while (!firstHalf.empty()){
+            q.push(firstHalf.top());
+            firstHalf.pop();
+        }
+
+        printQueue(q);
+    }
+
 };
