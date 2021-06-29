@@ -10,7 +10,7 @@ int main() {
     Stack s;
    // s.showGreaterRightCode();
     Queue q;
-    q.showModifyQueueCode();
+    q.showInterleaveCode();
 
 
     return 0;

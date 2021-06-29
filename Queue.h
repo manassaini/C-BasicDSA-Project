@@ -134,4 +134,40 @@ public:
         printQueue(q);
     }
 
+    void showInterleaveCode(){
+        cout << "void interLeave(queue<int>q){" << endl;
+        cout << "   int queueSize = q.size();" << endl;
+        cout << " stack<int>firstHalf;" << endl;
+        cout << " stack<int>secondHalf;" << endl;
+        cout << "  for (int i = 0; i < queueSize; ++i){" << endl;
+        cout << "     if (i < queueSize/2){" << endl;
+        cout << "        secondHalf.push(q.front());" << endl;
+        cout << "         q.pop();" << endl;
+        cout << "     }" << endl;
+        cout << "     else{" << endl;
+        cout << "        firstHalf.push(q.front());" << endl;
+        cout << "        q.pop();" << endl;
+        cout << "     }" << endl;
+        cout << "  }" << endl;
+
+        cout << "  for (int i = 0; i < queueSize/2; ++i){" << endl;
+        cout << "      q.push(firstHalf.top());" << endl;
+        cout << "      q.push(secondHalf.top());" << endl;
+        cout << "     firstHalf.pop();" << endl;
+        cout << "     secondHalf.pop();" << endl;
+        cout << "  }" << endl;
+
+        cout << " while (!q.empty()){" << endl;
+        cout << "     firstHalf.push(q.front());" << endl;
+        cout << "     q.pop();" << endl;
+        cout << " }" << endl;
+        cout << " while (!firstHalf.empty()){" << endl;
+        cout << "      q.push(firstHalf.top());" << endl;
+        cout << "      firstHalf.pop();" << endl;
+        cout << " }" << endl;
+
+        cout << "  printQueue(q);" << endl;
+        cout << "}" << endl;
+    }
+
 };
