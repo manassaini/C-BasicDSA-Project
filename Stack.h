@@ -41,6 +41,51 @@ public:
         return braces.empty();
     }
 
+    int postfix(string str){
+        //read left to right
+        //if c is a number, push to stack
+        //if c is an operator, peek 2 top elements
+        //apply operation to these two elements
+        //and push the result to the stack
+        stack<int>exp;
+        int temp; int firstOperand; int secondOperand;
+        for (char c: str){
+            if (c=='0') exp.push(0);
+            else if (c=='1') exp.push(1);
+            else if (c=='2') exp.push(2);
+            else if (c=='3') exp.push(3);
+            else if (c=='4') exp.push(4);
+            else if (c=='5') exp.push(5);
+            else if (c=='6') exp.push(6);
+            else if (c=='7') exp.push(7);
+            else if (c=='8') exp.push(8);
+            else if (c=='9') exp.push(9);
+
+            else {
+                secondOperand = exp.top();
+                exp.pop();
+                firstOperand = exp.top();
+                exp.pop();
+                if (c=='x') {
+                    temp = firstOperand * secondOperand;
+                    exp.push(temp);
+                }
+                else if (c=='/') {
+                    temp = firstOperand / secondOperand;
+                    exp.push(temp);
+                }
+                else if (c=='+') {
+                    temp = firstOperand + secondOperand;
+                    exp.push(temp);
+                }
+                else if (c=='-') {
+                    temp = firstOperand - secondOperand;
+                    exp.push(temp);
+                }
+            }
+        }
+        return exp.top();
+    }
 
 
 };
