@@ -94,6 +94,54 @@ public:
         return exp.top();
     }
 
+    void showPostFixCode(){
+        cout << "int postfix(string str){" << endl;
+            //read left to right
+            //if c is a number, push to stack
+            //if c is an operator, peek 2 top elements
+            //apply operation to these two elements
+            //and push the result to the stack
+        cout << "    stack<int>exp;" << endl;
+        cout << "    int temp; int firstOperand; int secondOperand;" << endl;
+        cout << "    for (char c: str){" << endl;
+        cout << "        if (c=='0') exp.push(0);" << endl;
+        cout << "        else if (c=='1') exp.push(1);" << endl;
+        cout << "        else if (c=='2') exp.push(2);" << endl;
+        cout << "        else if (c=='3') exp.push(3);" << endl;
+        cout << "        else if (c=='4') exp.push(4);" << endl;
+        cout << "        else if (c=='5') exp.push(5);" << endl;
+        cout << "        else if (c=='6') exp.push(6);" << endl;
+        cout << "        else if (c=='7') exp.push(7);" << endl;
+        cout << "        else if (c=='8') exp.push(8);" << endl;
+        cout << "        else if (c=='9') exp.push(9);" << endl;
+
+        cout << "        else {" << endl;
+        cout << "            secondOperand = exp.top();" << endl;
+        cout << "            exp.pop();" << endl;
+        cout << "            firstOperand = exp.top();" << endl;
+        cout << "            exp.pop();" << endl;
+        cout << "            if (c=='x') {" << endl;
+        cout << "                temp = firstOperand * secondOperand;" << endl;
+        cout << "                exp.push(temp);" << endl;
+        cout << "            }" << endl;
+        cout << "            else if (c=='/') {" << endl;
+        cout << "                temp = firstOperand / secondOperand;" << endl;
+        cout << "                exp.push(temp);" << endl;
+        cout << "            }" << endl;
+        cout << "            else if (c=='+') {" << endl;
+        cout << "                temp = firstOperand + secondOperand;" << endl;
+        cout << "                exp.push(temp);" << endl;
+        cout << "            }" << endl;
+        cout << "            else if (c=='-') {" << endl;
+        cout << "                temp = firstOperand - secondOperand;" << endl;
+        cout << "                exp.push(temp);" << endl;
+        cout << "            }" << endl;
+        cout << "        }" << endl;
+        cout << "    }" << endl;
+        cout << "    return exp.top();" << endl;
+        cout << "}" << endl;
+    }
+
     void reverseArray(int arr[], int size){
         stack<int>nums;
         for (int i = 0; i < size; ++i){

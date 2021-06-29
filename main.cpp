@@ -8,7 +8,7 @@ using namespace std;
 
 int main() {
     Stack s;
-    s.showBalancedCode();
+    s.showPostFixCode();
 
     return 0;
 }
