@@ -87,6 +87,22 @@ public:
         return exp.top();
     }
 
+    void reverseArray(int arr[], int size){
+        stack<int>nums;
+        for (int i = 0; i < size; ++i){
+            nums.push(arr[i]);
+        }
+        int index = 0;
+        while (!nums.empty()){
+            arr[index] = nums.top();
+            nums.pop();
+            index++;
+        }
+        for (int i = 0; i < size; ++i){
+            cout << arr[i] << " ";
+        }
+    }
+
 
 };
 
