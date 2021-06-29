@@ -11,6 +11,14 @@
 
 class Queue{
 public:
+
+    void printQueue(queue<int>q){
+        while (!q.empty()){
+            cout << q.front() << " ";
+            q.pop();
+        }
+    }
+
     //works in gg compiler
     queue<int> rev(queue<int> q){
         stack<int>temp;
@@ -26,6 +34,27 @@ public:
         return q;
     }
 
+    void modifyQueue(queue<int> q, int k){
+        stack<int>s;
+        int queueSize = q.size();
+        int arr[q.size()];
+        for (int i = 0; i < queueSize - k; ++i){
+            arr[i] = q.front();
+            q.pop();
+        }
+        while (!q.empty()){
+            s.push(q.front());
+            q.pop();
+        }
+        for (int i = (queueSize-k) - 1; i >= 0; --i){
+            s.push(arr[i]);
+        }
+        while (!s.empty()){
+            q.push(s.top());
+            s.pop();
+        }
 
+        printQueue(q);
+    }
 
 };
