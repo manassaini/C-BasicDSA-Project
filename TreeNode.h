@@ -119,15 +119,15 @@ public:
         cout << root->data << " ";
     }
 
-    void showPostOrder(){
-        cout << "void postOrder(TreeNode* root){
-        cout << "    if (root == NULL){
-        cout << "        return;
-        cout << "    }
-        cout << "    postOrder(root->left);
-        cout << "    postOrder(root->right);
-        cout << "    cout << root->data << " ";
-        }
+    void showPostOrderCode(){
+        cout << "void postOrder(TreeNode* root){" << endl;
+        cout << "    if (root == NULL){" << endl;
+        cout << "        return;" << endl;
+        cout << "    }" << endl;
+        cout << "    postOrder(root->left);" << endl;
+        cout << "    postOrder(root->right);" << endl;
+        cout << "    cout << root->data << " ";" << endl;
+        cout << "}" << endl;
     }
 
     void searchBST(int val, TreeNode* root){
