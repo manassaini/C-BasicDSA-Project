@@ -78,6 +78,17 @@ public:
         preOrder(root->right);
     }
 
+    void showPreOrderCode(){
+        cout << "void preOrder(TreeNode* root){" << endl;
+        cout << "    if (root == NULL){" << endl;
+        cout << "        return;" << endl;
+        cout << "    }" << endl;
+        cout << "    cout << root->data << " ";" << endl;
+        cout << "    preOrder(root->left);" << endl;
+        cout << "    preOrder(root->right);" << endl;
+        cout << "}" << endl;
+    }
+
     void inOrder(TreeNode* root){
         if (root == NULL){
             return;
