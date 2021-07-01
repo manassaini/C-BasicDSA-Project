@@ -98,6 +98,18 @@ public:
         inOrder(root->right);
     }
 
+    void showInOrderCode(){
+        cout << "void inOrder(TreeNode* root){" << endl;
+        cout << "    if (root == NULL){" << endl;
+        cout << "        return;" << endl;
+        cout << "    }" << endl;
+        cout << "    inOrder(root->left);" << endl;
+        cout << "    cout << root->data << " ";" << endl;
+        cout << "    inOrder(root->right);" << endl;
+        cout << "}" << endl;
+    }
+
+
     void postOrder(TreeNode* root){
         if (root == NULL){
             return;
@@ -105,6 +117,17 @@ public:
         postOrder(root->left);
         postOrder(root->right);
         cout << root->data << " ";
+    }
+
+    void showPostOrder(){
+        cout << "void postOrder(TreeNode* root){
+        cout << "    if (root == NULL){
+        cout << "        return;
+        cout << "    }
+        cout << "    postOrder(root->left);
+        cout << "    postOrder(root->right);
+        cout << "    cout << root->data << " ";
+        }
     }
 
     void searchBST(int val, TreeNode* root){
