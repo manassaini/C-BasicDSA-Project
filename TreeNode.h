@@ -95,4 +95,16 @@ public:
         postOrder(root->right);
         cout << root->data << " ";
     }
+
+    void searchBST(int val, TreeNode* root){
+        if (root->data == val){
+            cout << val << " is found!";
+        }
+        else if (val < root->data){
+            searchBST(val, root->left);
+        }
+        else if (val > root->data){
+            searchBST(val, root->right);
+        }
+    }
 };
