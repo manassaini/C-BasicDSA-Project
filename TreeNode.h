@@ -169,7 +169,20 @@ public:
         return root;
     }
 
-    void s
+    void showInsertDataBST(){
+        cout << "TreeNode* insertDataBST(int val, TreeNode* root){" << endl;
+        cout << "    if (root == NULL){" << endl;
+        cout << "        return new TreeNode(val);" << endl;
+        cout << "    }" << endl;
+        cout << "    if (val < root->data){" << endl;
+        cout << "        root->left = insertDataBST(val, root->left);" << endl;
+        cout << "    }" << endl;
+        cout << "    if (val > root->data){" << endl;
+        cout << "        root->right = insertDataBST(val, root->right);" << endl;
+        cout << "    }" << endl;
+        cout << "    return root;" << endl;
+        cout << "}" << endl;
+    }
 
     bool isSameTree(TreeNode* root1, TreeNode* root2){
         if (root1 == NULL && root2 == NULL) {
