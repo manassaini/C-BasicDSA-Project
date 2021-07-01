@@ -72,9 +72,25 @@ public:
         }
         temp->next = newNode;
         return head;
-
     }
 
+    void showAddNodeToEndCode(){
+        cout << "Node* addNodeToEnd(Node* head){" << endl;
+        cout << "    int newData;" << endl;
+        cout << "    Node* temp;" << endl;
+        cout << "    Node* newNode;" << endl;
+        cout << "    temp = head;" << endl;
+        cout << "    cout << ""Enter data of the new Node:";"" << endl;
+        cout << "    cin >> newData;" << endl;
+        cout << "    newNode = createNewNode(newData);" << endl;
+
+        cout << "    while (temp->next != NULL){" << endl;
+        cout << "        temp = temp->next;" << endl;
+        cout << "    }" << endl;
+        cout << "    temp->next = newNode;" << endl;
+        cout << "    return head;" << endl;
+        cout << "}" << endl;
+    }
     Node* addNodeToFront(Node* head, int num){
         int newData;
         Node* temp;
