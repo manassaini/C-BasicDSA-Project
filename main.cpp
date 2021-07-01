@@ -10,7 +10,12 @@ int main() {
     Stack s;
    // s.showGreaterRightCode();
     Queue q;
-    q.showInterleaveCode();
+    //q.showInterleaveCode();
+    Node list;
+
+    Node* head = list.createLinkedList(8);
+    list.printList(head);
+
 
 
     return 0;
