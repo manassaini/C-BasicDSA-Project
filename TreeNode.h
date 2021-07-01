@@ -107,4 +107,17 @@ public:
             searchBST(val, root->right);
         }
     }
+
+    TreeNode* insertDataBST(int val, TreeNode* root){
+        if (root == NULL){
+            return new TreeNode(val);
+        }
+        if (val < root->data){
+            root->left = insertDataBST(val, root->left);
+        }
+        if (val > root->data){
+            root->right = insertDataBST(val, root->right);
+        }
+        return root;
+    }
 };
