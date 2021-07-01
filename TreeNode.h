@@ -19,4 +19,13 @@ public:
         left = NULL;
         right = NULL;
     }
+
+    void printTree(TreeNode* root){
+        if (root == NULL){
+            return;
+        }
+        cout << root->data << " -> ";
+        printTree(root->left);
+        printTree(root->right);
+    }
 };
