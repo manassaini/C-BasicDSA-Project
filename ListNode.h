@@ -131,6 +131,16 @@ public:
         return NULL;
     }
 
+    void showFindSpecificNodeCode(){
+        cout << "Node* findSpecificNode(Node* node, int value){" << endl;
+        cout << "    while (node != NULL){" << endl;
+        cout << "        if (node->data == value) return node;" << endl;
+        cout << "        node = node->next;" << endl;
+        cout << "    }" << endl;
+        cout << "    return NULL;" << endl;
+        cout << "}" << endl;
+    }
+
     int getMiddle(Node* head) {
         Node *slowPointer = head;
         Node *fastPointer = head;
@@ -139,6 +149,18 @@ public:
             fastPointer = fastPointer->next->next;
         }
         return slowPointer->data;
+    }
+
+    void showGetMiddleCode(){
+        cout << "int getMiddle(Node* head) {" << endl;
+        cout << "    Node *slowPointer = head;" << endl;
+        cout << "    Node *fastPointer = head;" << endl;
+        cout << "    while (fastPointer != NULL && fastPointer->next != NULL) {" << endl;
+        cout << "        slowPointer = slowPointer->next;" << endl;
+        cout << "        fastPointer = fastPointer->next->next;" << endl;
+        cout << "    }" << endl;
+        cout << "    return slowPointer->data;" << endl;
+        cout << "}" << endl;
     }
 
     void removeDuplicates(Node* head){
@@ -155,5 +177,23 @@ public:
             }
         }
         printList(head);
+    }
+
+    void showRemoveDuplicatesCode(){
+        cout << "void removeDuplicates(Node* head){" << endl;
+        cout << "    Node* current = head;" << endl;
+        cout << "    Node* next;" << endl;
+        cout << "    while (current->next != NULL){" << endl;
+        cout << "        if (current->data == current->next->data){" << endl;
+        cout << "            next = current->next->next;" << endl;
+        cout << "            free(current->next);" << endl;
+        cout << "            current->next = next;" << endl;
+        cout << "        }" << endl;
+        cout << "        else{" << endl;
+        cout << "            current = current->next;" << endl;
+        cout << "        }" << endl;
+        cout << "    }" << endl;
+        cout << "    printList(head);" << endl;
+        cout << "}" << endl;
     }
 };
