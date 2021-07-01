@@ -51,4 +51,21 @@ public:
         root->right->right->right = new TreeNode(9);
         return root;
     }
+
+    TreeNode* createBSTManual(){
+        TreeNode* root = new TreeNode(8);             //level 1
+
+        root->left = new TreeNode(3);             //level 2
+        root->right = new TreeNode(10);
+
+        root->left->left = new TreeNode(1);       //level 3
+        root->left->right = new TreeNode(6);
+        root->right->right = new TreeNode(14);
+
+        root->left->right->left = new TreeNode(4); //level 4
+        root->left->right->right = new TreeNode(7);
+        root->right->right->left = new TreeNode(13);
+
+        return root;
+    }
 };
