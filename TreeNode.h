@@ -142,6 +142,20 @@ public:
         }
     }
 
+    void showSearchBSTCode(){
+        cout << "void searchBST(int val, TreeNode* root){" << endl;
+        cout << "    if (root->data == val){" << endl;
+        cout << "        cout << val <<  is found!"";" << endl;
+        cout << "    }" << endl;
+        cout << "    else if (val < root->data){" << endl;
+        cout << "        searchBST(val, root->left);" << endl;
+        cout << "    }" << endl;
+        cout << "    else if (val > root->data){" << endl;
+        cout << "        searchBST(val, root->right);" << endl;
+        cout << "    }" << endl;
+        cout << "}" << endl;
+    }
+
     TreeNode* insertDataBST(int val, TreeNode* root){
         if (root == NULL){
             return new TreeNode(val);
@@ -154,6 +168,8 @@ public:
         }
         return root;
     }
+
+    void s
 
     bool isSameTree(TreeNode* root1, TreeNode* root2){
         if (root1 == NULL && root2 == NULL) {
