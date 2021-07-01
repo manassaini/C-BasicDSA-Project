@@ -77,4 +77,13 @@ public:
         preOrder(root->left);
         preOrder(root->right);
     }
+
+    void inOrder(TreeNode* root){
+        if (root == NULL){
+            return;
+        }
+        inOrder(root->left);
+        cout << root->data << " ";
+        inOrder(root->right);
+    }
 };
