@@ -224,4 +224,15 @@ public:
             return root->data + sumNodes(root->left) + sumNodes(root->right);
         }
     }
+
+    void showSumNodesCode(){
+        cout << "int sumNodes(TreeNode* root) {" << endl;
+        cout << "    if (root == NULL){" << endl;
+        cout << "        return 0;" << endl;
+        cout << "    }" << endl;
+        cout << "    else {" << endl;
+        cout << "        return root->data + sumNodes(root->left) + sumNodes(root->right);" << endl;
+        cout << "    }" << endl;
+        cout << "}" << endl;
+    }
 };
