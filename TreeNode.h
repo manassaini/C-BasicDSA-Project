@@ -215,4 +215,13 @@ public:
         cout << "    }" << endl;
         cout << "}" << endl;
     }
+
+    int sumNodes(TreeNode* root) {
+        if (root == NULL){
+            return 0;
+        }
+        else {
+            return root->data + sumNodes(root->left) + sumNodes(root->right);
+        }
+    }
 };
