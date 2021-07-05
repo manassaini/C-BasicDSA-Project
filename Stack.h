@@ -240,6 +240,18 @@ public:
         cout << "}" << endl;
     }
 
+    void chooseStackAlgo(){
+        cout << "Which algorithm that uses a stack would you like to see?" << endl;
+        cout << "1 --> Balanced Parantheses" << endl;
+        cout << "2 --> Postfix" << endl;
+        cout << "3 --> Reverse Array" << endl;
+        cout << "4 --> Greater Right" << endl;
+    }
+
+    void explainBalancedParantheses(){
+
+    }
+
 
 };
 
