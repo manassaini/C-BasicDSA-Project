@@ -21,6 +21,7 @@ int main() {
      */
     Program program;
     program.IntroMessage();
+    program.chooseDS();
 
 
     return 0;

@@ -20,8 +20,16 @@ public:
         cout << "3. Since all the algorithms have their own names, the program will explain each one to you and give I/O examples." << endl;
         cout << "4. You will then be asked which input you would like to run for that algorithm." << endl;
         cout << "5. The algorithm will run with the specific input, and you will see that it indeed does work correctly." << endl;
-        cout << "6. You will then be asked if you would like to see the code for that algorithm and how it works." << endl;
+        cout << "6. You will then be asked if you would like to see the code for that algorithm to study its functionality." << endl << endl;
+    }
 
+    void chooseDS(){
+        cout << "Which DS would you like to work with? Please use the correct number mapping." << endl;
+        cout << "1 --> Stack" << endl;
+        cout << "2 --> Queue" << endl;
+        cout << "3 --> Linked List" << endl;
+        cout << "4 --> Tree" << endl;
+        cout << "5 --> HashMap" << endl;
     }
 };
 
