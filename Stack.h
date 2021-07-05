@@ -48,6 +48,27 @@ public:
         cout << "}";
     }
 
+    void explainBalancedParantheses(){
+        cout << "Here is the problem description for Balanced Parantheses" << endl;
+        cout << "Given a string s containing just the characters '(', ')', '{', '}', '[' and ']', determine if the input string is valid.";
+        cout << "An input string is valid if: " << endl;
+        cout << "      1. Open brackets must be closed by the same type of brackets." << endl;
+        cout << "      2. Open brackets must be closed in the correct order." << endl;
+        cout << "*** COURTESY OF LEETCODE ***" << endl;
+    }
+
+    void showExamplesBalancedParantheses(){
+        cout << "Example 1: " << endl;
+        cout << "Input: s = ()" << endl;
+        cout << "Output: true" << endl << endl;
+        cout << "Example 2: " << endl;
+        cout << "Input: s = ()[]{}" << endl;
+        cout << "Output: true" << endl << endl;
+        cout << "Input: s = (]" << endl;
+        cout << "Output: false" << endl;
+        cout << "*** COURTESY OF LEETCODE ***";
+    }
+
     int postfix(string str){
         //read left to right
         //if c is a number, push to stack
@@ -140,6 +161,20 @@ public:
         cout << "    }" << endl;
         cout << "    return exp.top();" << endl;
         cout << "}" << endl;
+    }
+
+    void explainPostfix(){
+        cout << "Given string S representing a postfix expression, the task is to evaluate the expression and find the final value. Operators will only include the basic arithmetic operators like *, /, + and -." << endl;
+        cout << "Postfix notation is when the operator is written after the operands. For example: ab+. This is equivalent to its infix counter part, written as a + b." << endl;
+    }
+
+    void showExamplesPostfix(){
+        cout << "Example 1:" << endl;
+        cout << "Input: S = 231*+9-" << endl;
+        cout << "Output: -4" << endl;
+        cout << "Example 2:" << endl;
+        cout << "Input: S = 123+*8-" << endl;
+        cout << "Output: -3" << endl;
     }
 
     void reverseArray(int arr[], int size){
@@ -248,26 +283,7 @@ public:
         cout << "4 --> Greater Right" << endl;
     }
 
-    void explainBalancedParantheses(){
-        cout << "Here is the problem description for Balanced Parantheses" << endl;
-        cout << "Given a string s containing just the characters '(', ')', '{', '}', '[' and ']', determine if the input string is valid.";
-        cout << "An input string is valid if: " << endl;
-        cout << "      1. Open brackets must be closed by the same type of brackets." << endl;
-        cout << "      2. Open brackets must be closed in the correct order." << endl;
-        cout << "*** COURTESY OF LEETCODE ***" << endl;
-    }
 
-    void showExamplesBalancedParantheses(){
-        cout << "Example 1: " << endl;
-        cout << "Input: s = ()" << endl;
-        cout << "Output: true" << endl << endl;
-        cout << "Example 2: " << endl;
-        cout << "Input: s = ()[]{}" << endl;
-        cout << "Output: true" << endl << endl;
-        cout << "Input: s = (]" << endl;
-        cout << "Output: false" << endl;
-        cout << "*** COURTESY OF LEETCODE ***";
-    }
 
 
 };
