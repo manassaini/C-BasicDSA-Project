@@ -80,7 +80,7 @@ public:
         cout << "    Node* temp;" << endl;
         cout << "    Node* newNode;" << endl;
         cout << "    temp = head;" << endl;
-        cout << "    cout << ""Enter data of the new Node:";"" << endl;
+        cout << "    cout << ""Enter data of the new Node:"";" << endl;
         cout << "    cin >> newData;" << endl;
         cout << "    newNode = createNewNode(newData);" << endl;
 
@@ -113,7 +113,7 @@ public:
         cout << "    Node* newNode;" << endl;
         cout << "    temp = head;" << endl;
         cout << "    for (int i = 0; i < num; ++i){" << endl;
-        cout << "        cout << ""Enter data for your new node:";"" << endl;
+        cout << "        cout << ""Enter data for your new node:"";" << endl;
         cout << "        cin >> newData;" << endl;
         cout << "        newNode = createNewNode(newData);" << endl;
         cout << "        newNode->next = head;" << endl;
