@@ -22,6 +22,10 @@ int main() {
     Program program;
     program.IntroMessage();
     program.chooseDS();
+    s.explainBalancedParantheses();
+    s.showExamplesBalancedParantheses();
+
+
 
 
     return 0;
