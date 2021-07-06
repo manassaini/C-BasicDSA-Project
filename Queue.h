@@ -50,6 +50,14 @@ public:
         cout << "}" << endl;
     }
 
+    void explainReverseQueue(){
+
+    }
+
+    void showExamplesRevQueue(){
+
+    }
+
     void modifyQueue(queue<int> q, int k){
         stack<int>s;
         int queueSize = q.size();
@@ -98,7 +106,13 @@ public:
         cout << "}" << endl;
     }
 
+    void explainModifyQueue(){
 
+    }
+
+    void showExamplesModifyQueue(){
+
+    }
 
     void interLeave(queue<int>q){
         int queueSize = q.size();
@@ -168,6 +182,21 @@ public:
 
         cout << "  printQueue(q);" << endl;
         cout << "}" << endl;
+    }
+
+    void explainInterleave(){
+
+    }
+
+    void showExamplesInterleave(){
+
+    }
+
+    void chooseQueueAlgo(){
+        cout << "Which algorithm that uses a queue would you like to see?" << endl;
+        cout << "1 --> Reverse Queue" << endl;
+        cout << "2 --> Modify Queue" << endl;
+        cout << "3 --> Interleave Queue" << endl;
     }
 
 };
