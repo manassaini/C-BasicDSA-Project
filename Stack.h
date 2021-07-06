@@ -166,6 +166,7 @@ public:
     void explainPostfix(){
         cout << "Given string S representing a postfix expression, the task is to evaluate the expression and find the final value. Operators will only include the basic arithmetic operators like *, /, + and -." << endl;
         cout << "Postfix notation is when the operator is written after the operands. For example: ab+. This is equivalent to its infix counter part, written as a + b." << endl;
+        cout << "*** COURTESY OF TECHIEDELIGHT ***" << endl;
     }
 
     void showExamplesPostfix(){
@@ -175,6 +176,7 @@ public:
         cout << "Example 2:" << endl;
         cout << "Input: S = 123+*8-" << endl;
         cout << "Output: -3" << endl;
+        cout << "*** COURTESY OF TECHIEDELIGHT ***" << endl;
     }
 
     void reverseArray(int arr[], int size){
@@ -214,6 +216,7 @@ public:
     void explainReverseArray(){
         cout << "The name for this algorithm explains itself." << endl;
         cout << "Given an array and size of array, reverse the array's contents using a stack." << endl;
+        cout << "*** COURTESY OF GEEKSFORGEEKS ***" << endl;
     }
 
     void showExamplesReverseArray(){
@@ -223,6 +226,7 @@ public:
         cout << "Example 2:" << endl;
         cout << "Input: [1,0], 2" << endl;
         cout << "Output: 0,1" << endl;
+        cout << "*** COURTESY OF GEEKSFORGEEKS ***" << endl;
     }
 
     void greaterRight(int arr[], int size){
@@ -292,6 +296,7 @@ public:
     void explainGreaterRight(){
         cout << "Given an array and size of the array, print all the elements in the array that are greater than all the elements to its right." << endl;
         cout << "Or in other words, if an element is greater than all the elements to its right, print it." << endl;
+        cout << "*** COURTESY OF GEEKSFORGEEKS ***" << endl;
     }
 
     void showExamplesGreaterRight(){
@@ -302,6 +307,7 @@ public:
         cout << "Example 2:" << endl;
         cout << "Input: [2,1], 2" << endl;
         cout << "Output: 1 2" << endl;
+        cout << "*** COURTESY OF GEEKSFORGEEKS ***" << endl;
     }
 
     void chooseStackAlgo(){

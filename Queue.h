@@ -51,11 +51,18 @@ public:
     }
 
     void explainReverseQueue(){
-
+        cout << "Given a Queue Q containing N elements. The task is to reverse the Queue" << endl;
+        cout << "*** COURTESY OF GEEKSFORGEEKS ***" << endl;
     }
 
     void showExamplesRevQueue(){
-
+        cout << "Example 1:" << endl;
+        cout << "Input: 4 3 1 10 2 6" << endl;
+        cout << "Output: 6 2 10 1 3 4" << endl;
+        cout << "Example 2:" << endl;
+        cout << "Input: 4 3 2 1" << endl;
+        cout << "Output: 1 2 3 4" << endl;
+        cout << "*** COURTESY OF GEEKSFORGEEKS ***" << endl;
     }
 
     void modifyQueue(queue<int> q, int k){
