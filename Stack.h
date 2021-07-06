@@ -289,6 +289,21 @@ public:
         cout << "}" << endl;
     }
 
+    void explainGreaterRight(){
+        cout << "Given an array and size of the array, print all the elements in the array that are greater than all the elements to its right." << endl;
+        cout << "Or in other words, if an element is greater than all the elements to its right, print it." << endl;
+    }
+
+    void showExamplesGreaterRight(){
+        cout << "Example 1:" << endl;
+        cout << "Input: [10,4,6,3,5], 5" << endl;
+        cout << "Output: 5 6 10" << endl;
+        cout << "Explanation: 5 is greater than all the elements to its right, so is 6, and so is 10." << endl;
+        cout << "Example 2:" << endl;
+        cout << "Input: [2,1], 2" << endl;
+        cout << "Output: 1 2" << endl;
+    }
+
     void chooseStackAlgo(){
         cout << "Which algorithm that uses a stack would you like to see?" << endl;
         cout << "1 --> Balanced Parantheses" << endl;
