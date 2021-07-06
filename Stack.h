@@ -211,6 +211,20 @@ public:
         cout << "}" << endl;
     }
 
+    void explainReverseArray(){
+        cout << "The name for this algorithm explains itself." << endl;
+        cout << "Given an array and size of array, reverse the array's contents using a stack." << endl;
+    }
+
+    void showExamplesReverseArray(){
+        cout << "Example 1:" << endl;
+        cout << "Input: [0,1,2,3,4,5], 6" << endl;
+        cout << "Output: 5,4,3,2,1,0" << endl;
+        cout << "Example 2:" << endl;
+        cout << "Input: [1,0], 2" << endl;
+        cout << "Output: 0,1" << endl;
+    }
+
     void greaterRight(int arr[], int size){
         //push first element in stack
         //push second element, see if it's less than stack.top()
