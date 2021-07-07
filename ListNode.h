@@ -139,6 +139,10 @@ public:
         return NULL;
     }
 
+    void explainFindSpecificNode(){
+        cout << "This program checks to see if a specific node is in a linked list or not. Takes in a linked list and value as parameters." << endl;
+        cout << "The value is the node->data you are looking for." << endl;
+    }
 
     void showFindSpecificNodeCode(){
         cout << "Node* findSpecificNode(Node* node, int value){" << endl;
@@ -150,6 +154,62 @@ public:
         cout << "}" << endl;
     }
 
+    Node* deleteNode(Node* head, int pos){
+        Node* previous = head;
+        Node* current = head;
+        if (pos == 1){
+            head = current->next;
+            free(current);
+            current = NULL;
+        }
+        else{
+            while (pos != 1){
+                previous = current;
+                current = current->next;
+                pos--;
+            }
+            previous->next = current->next;
+            free(current);
+            current = NULL;
+        }
+        return head;
+    }
+
+    void showDeleteNodeCode(){
+        cout << "Node* deleteNode(Node* head, int pos){" << endl;
+        cout << "    Node* previous = head;" << endl;
+        cout << "    Node* current = head;" << endl;
+        cout << "    if (pos == 1){" << endl;
+        cout << "        head = current->next;" << endl;
+        cout << "        free(current);" << endl;
+        cout << "        current = NULL;" << endl;
+        cout << "    }" << endl;
+        cout << "    else{" << endl;
+        cout << "        while (pos != 1){" << endl;
+        cout << "            previous = current;" << endl;
+        cout << "            current = current->next;" << endl;
+        cout << "            pos--;" << endl;
+        cout << "        }" << endl;
+        cout << "        previous->next = current->next;" << endl;
+        cout << "        free(current);" << endl;
+        cout << "        current = NULL;" << endl;
+        cout << "    }" << endl;
+        cout << "   return head;" << endl;
+        cout << "}" << endl;
+    }
+
+    void explainDeleteNode(){
+        cout << "Given the head of a linked list and an integer holding the position of the node you wish to be deleted, the task is to delete that node" << endl;
+        cout << "*** COURTESY OF GEEKSFORGEEKS ***" << endl;
+    }
+
+    void showExamplesDeleteNode(){
+        cout << "Example 1:" << endl;
+        cout << "Input: 4->5->1->9, 2" << endl;
+        cout << "Output: 4->1->9" << endl;
+        cout << "Explanation: The node at position 2 is deleted." << endl;
+    }
+
     int getMiddle(Node* head) {
         Node *slowPointer = head;
         Node *fastPointer = head;
@@ -158,6 +218,21 @@ public:
             fastPointer = fastPointer->next->next;
         }
         return slowPointer->data;
+    }
+
+    void explainGetMiddel(){
+        cout << "Given a singly linked list of N nodes. The task is to find the middle of the linked list. For example, if given linked list is 1->2->3->4->5 then the output should be 3.\n"
+                "If there are even nodes, then there would be two middle nodes, we need to print the second middle element. For example, if given linked list is 1->2->3->4->5->6 then the output should be 4." << endl;
+        cout << "*** COURTESY OF GEEKSFORGEEKS ***" << endl;
+    }
+
+    void showExamplesGetMiddle(){
+        cout << "Example 1: " << endl;
+        cout << "Input: LinkedList: 1->2->3->4->5" << endl;
+        cout << "Output: 3" << endl;
+        cout << "Example 2: " << endl;
+        cout << "Input: LinkedList: 2->4->6->7->5->1" << endl;
+        cout << "Output: 7" << endl;
     }
 
     void showGetMiddleCode(){
@@ -204,5 +279,19 @@ public:
         cout << "    }" << endl;
         cout << "    printList(head);" << endl;
         cout << "}" << endl;
+    }
+
+    void explainRemoveDuplicates(){
+        cout << "Given an unsorted linked list of N nodes. The task is to remove duplicate elements from this unsorted Linked List. When a value appears in multiple nodes, the node which appeared first should be kept, all others duplicates are to be removed." << endl;
+        cout << "*** COURTESY OF GEEKSFORGEEKS ***" << endl;
+    }
+
+    void showExamplesRemoveDuplicates(){
+        cout << "Example 1: " << endl;
+        cout << "Input: 5->2->2->4" << endl;
+        cout << "Output: 5->2->4" << endl;
+        cout << "Example 2: " << endl;
+        cout << "Input: 2->2->2->2->" << endl;
+        cout << "Output: 2" << endl;
     }
 };
