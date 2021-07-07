@@ -142,6 +142,11 @@ public:
         }
     }
 
+    void explainSearchBST(){
+        cout << "This program searches for a node in a binary search tree." << endl;
+        cout << "The function is given two parameters, the root of the BST tree and an integer value of the node you are looking for." << endl;
+    }
+
     void showSearchBSTCode(){
         cout << "void searchBST(int val, TreeNode* root){" << endl;
         cout << "    if (root->data == val){" << endl;
@@ -167,6 +172,11 @@ public:
             root->right = insertDataBST(val, root->right);
         }
         return root;
+    }
+
+    void explainInsertDataBST(){
+        cout << "This program inserts a Node in an already existing binary search tree." << endl;
+        cout << "It takes two parameters, the root of the BST and the value of the node you wish to add." << endl;
     }
 
     void showInsertDataBSTCode(){
