@@ -192,11 +192,18 @@ public:
     }
 
     void explainInterleave(){
-
+        cout << "Given a queue of integers of even length, rearrange the elements by interleaving the first half of the queue with the second half of the queue.\n"
+                "\n"
+                "Only a stack can be used as an auxiliary space.";
     }
 
     void showExamplesInterleave(){
-
+        cout << "Example 1: " << endl;
+        cout << "Input: 1 2 3 4" << endl;
+        cout << "Output: 1 3 2 4" << endl;
+        cout << "Example 2: " << endl;
+        cout << "Input: 11 12 13 14 15 16 17 18 19 20" << endl;
+        cout << "Output: 11 16 12 17 13 18 14 19 15 20" << endl;
     }
 
     void chooseQueueAlgo(){
