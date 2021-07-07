@@ -74,6 +74,10 @@ public:
         return head;
     }
 
+    void explainAddNodeToEnd(){
+        cout << "This simple program adds a Node to the end of an already existing linked list. The data for the new node is asked within the program." << endl;
+    }
+
     void showAddNodeToEndCode(){
         cout << "Node* addNodeToEnd(Node* head){" << endl;
         cout << "    int newData;" << endl;
@@ -123,6 +127,10 @@ public:
         cout << "}" << endl;
     }
 
+    void explainAddNodeToFront(){
+        cout << "This simple program adds a Node to the front of an already existing linked list. The data for the new node is asked within the program." << endl;
+    }
+
     Node* findSpecificNode(Node* node, int value){
         while (node != NULL){
             if (node->data == value) return node;
@@ -130,6 +138,7 @@ public:
         }
         return NULL;
     }
+
 
     void showFindSpecificNodeCode(){
         cout << "Node* findSpecificNode(Node* node, int value){" << endl;
