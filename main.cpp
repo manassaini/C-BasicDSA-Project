@@ -8,6 +8,7 @@ using namespace std;
 #include "Program.h"
 
 int main() {
+    /*
     Stack s;
    // s.showGreaterRightCode();
     Queue q;
@@ -25,11 +26,42 @@ int main() {
     program.chooseDS();
     s.explainBalancedParantheses();
     s.showExamplesBalancedParantheses();
-     */
+
 
    // tree.showExamplesIsSameTree();
     //tree.showExamplesSumNodes();
     tree.showExamplesInsertBST();
+    */
+
+    Program program;
+    Stack stack;
+    Queue queue;
+    Node list;
+    TreeNode tree(0);
+
+    program.IntroMessage();
+    program.chooseDS();
+
+    int choice = program.selectDS();
+
+    if (choice == 1){
+        stack.chooseStackAlgo();
+    }
+    else if (choice == 2){
+        queue.chooseQueueAlgo();
+    }
+    else if (choice == 3){
+        list.chooseListAlgo();
+    }
+    else if (choice == 4){
+        tree.chooseTreeAlgo();
+    }
+
+
+
+
+
+
 
 
 

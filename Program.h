@@ -9,6 +9,7 @@
 class Program {
 
 public:
+    int choice;
 
     void IntroMessage(){
         cout << "Welcome to my C++ Data Structures project!" << endl;
@@ -17,13 +18,14 @@ public:
         cout << "Below explains the UI and how you can correctly run the program." << endl;
         cout << "1. The program will first ask you which data structure you would like to work with." << endl;
         cout << "2. Then, you will be asked which specific algorithm you would like to see for that data structure." << endl;
-        cout << "3. Since all the algorithms have their own names, the program will explain each one to you and give I/O examples." << endl;
+        cout << "3. Since all the algorithms have their own names, the program will explain each one to you as well as give I/O examples." << endl;
         cout << "4. You will then be asked which input you would like to run for that algorithm." << endl;
         cout << "5. The algorithm will run with the specific input, and you will see that it indeed does work correctly." << endl;
         cout << "6. You will then be asked if you would like to see the code for that algorithm to study its functionality." << endl << endl;
     }
 
     void chooseDS(){
+        cout << "Let's begin!" << endl;
         cout << "Which DS would you like to work with? Please use the correct number mapping." << endl;
         cout << "1 --> Stack" << endl;
         cout << "2 --> Queue" << endl;
@@ -31,6 +33,29 @@ public:
         cout << "4 --> Tree" << endl;
         cout << "5 --> HashMap" << endl;
     }
+
+    int selectDS(){
+        cout << "Type a number to select: ";
+        cin >> choice;
+        if (choice == 1){
+            cout << endl << "You chose Stack" << endl;
+        }
+        else if (choice == 2){
+            cout << endl << "You chose Queue" << endl;
+        }
+        else if (choice == 3){
+            cout << endl << "You chose Linked List" << endl;
+        }
+        else if (choice == 4){
+            cout << endl << "You chose Tree" << endl;
+        }
+        else{
+            cout << "--> Please select the correct number mapping!" << endl;
+            selectDS();
+        }
+        return choice;
+    }
+
 };
 
 

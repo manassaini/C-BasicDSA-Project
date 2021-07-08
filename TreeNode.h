@@ -308,4 +308,13 @@ public:
         cout << "Output: 28" << endl;
         cout << "Explanation: 1 + 2 + 3 + 4 + 5 + 6 + 7 = 28" << endl;
     }
+
+    void chooseTreeAlgo(){
+        cout << "Which algorithm that uses a tree would you like to see?" << endl;
+        cout << "1 --> Pre/In/Post Order Traversal" << endl;
+        cout << "2 --> Search in Binary Search Tree" << endl;
+        cout << "3 --> Insert in Binary Search Tree" << endl;
+        cout << "4 --> Is Same Tree?" << endl;
+        cout << "5 --> Sum Nodes of Tree" << endl;
+    }
 };
