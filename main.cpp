@@ -28,7 +28,8 @@ int main() {
      */
 
    // tree.showExamplesIsSameTree();
-    tree.showExamplesSumNodes();
+    //tree.showExamplesSumNodes();
+    tree.showExamplesInsertBST();
 
 
 

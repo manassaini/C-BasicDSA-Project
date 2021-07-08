@@ -195,6 +195,23 @@ public:
     }
 
     void showExamplesInsertBST(){
+        cout << "Example 1: " << endl;
+        cout << "Input: " << endl;
+        cout << "Example 1:" << endl;
+        cout << "Input: " << endl;
+        cout << "         5" << endl;
+        cout << "      /     \\" << endl;
+        cout << "     3       8" << "              Val: 7" << endl;
+        cout << "   /  \\     /  \\" << endl;
+        cout << "  1    4   6    9" << endl;
+        cout << "Output: " << endl;
+        cout << "         5" << endl;
+        cout << "      /     \\" << endl;
+        cout << "     3       8" << endl;
+        cout << "   /  \\     /  \\" << endl;
+        cout << "  1    4   6    9" << endl;
+        cout << "            \\" << endl;
+        cout << "             7" << endl;
 
     }
 
