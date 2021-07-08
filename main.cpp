@@ -27,7 +27,8 @@ int main() {
     s.showExamplesBalancedParantheses();
      */
 
-    tree.showExamplesIsSameTree();
+   // tree.showExamplesIsSameTree();
+    tree.showExamplesSumNodes();
 
 
 

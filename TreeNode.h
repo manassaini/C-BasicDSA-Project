@@ -142,11 +142,6 @@ public:
         }
     }
 
-    void explainSearchBST(){
-        cout << "This program searches for a node in a binary search tree." << endl;
-        cout << "The function is given two parameters, the root of the BST tree and an integer value of the node you are looking for." << endl;
-    }
-
     void showSearchBSTCode(){
         cout << "void searchBST(int val, TreeNode* root){" << endl;
         cout << "    if (root->data == val){" << endl;
@@ -159,6 +154,11 @@ public:
         cout << "        searchBST(val, root->right);" << endl;
         cout << "    }" << endl;
         cout << "}" << endl;
+    }
+
+    void explainSearchBST(){
+        cout << "This program searches for a node in a binary search tree." << endl;
+        cout << "The function is given two parameters, the root of the BST tree and an integer value of the node you are looking for." << endl;
     }
 
     TreeNode* insertDataBST(int val, TreeNode* root){
@@ -174,11 +174,6 @@ public:
         return root;
     }
 
-    void explainInsertDataBST(){
-        cout << "This program inserts a Node in an already existing binary search tree." << endl;
-        cout << "It takes two parameters, the root of the BST and the value of the node you wish to add." << endl;
-    }
-
     void showInsertDataBSTCode(){
         cout << "TreeNode* insertDataBST(int val, TreeNode* root){" << endl;
         cout << "    if (root == NULL){" << endl;
@@ -192,6 +187,15 @@ public:
         cout << "    }" << endl;
         cout << "    return root;" << endl;
         cout << "}" << endl;
+    }
+
+    void explainInsertDataBST(){
+        cout << "This program inserts a Node in an already existing binary search tree." << endl;
+        cout << "It takes two parameters, the root of the BST and the value of the node you wish to add." << endl;
+    }
+
+    void showExamplesInsertBST(){
+
     }
 
     bool isSameTree(TreeNode* root1, TreeNode* root2){
@@ -230,14 +234,26 @@ public:
         cout << "Given the roots of two binary trees p and q, write a function to check if they are the same or not.\n"
                 "\n"
                 "Two binary trees are considered the same if they are structurally identical, and the nodes have the same value." << endl;
-        cout << "*** COURTESY OF GEEKSFORGEEKS ***" << endl;
+        cout << "*** COURTESY OF LEETCODE ***" << endl;
     }
 
     void showExamplesIsSameTree(){
         cout << "Example 1: " << endl;
-        cout << "    1" << endl;
-        cout << "  /   \\" << endl;
-        cout << " 2     3" << endl;
+        cout << "Input: " << endl;
+        cout << "    1" <<            "             1" << endl;
+        cout << "  /   \\" <<         "         /   \\"  << endl;
+        cout << " 2     3" <<         "       2     3" << endl;
+        cout << "Output: true" << endl;
+        cout << "Explanation: The two binary trees are the exact same." << endl << endl;
+        cout << "Example 2: "<< endl;
+        cout << "Input: "<< endl;
+        cout << "    1" << "     1" << endl;
+        cout << "  / "  << "        \\" << endl;
+        cout << " 2"    << "           2" << endl;
+        cout << "Output: false" << endl;
+        cout << "Explanation: While this looks similar, the nodes are in different positions." << endl;
+        cout << "*** COURTESY OF LEETCODE ***" << endl;
+
     }
 
     int sumNodes(TreeNode* root) {
@@ -258,5 +274,21 @@ public:
         cout << "        return root->data + sumNodes(root->left) + sumNodes(root->right);" << endl;
         cout << "    }" << endl;
         cout << "}" << endl;
+    }
+
+    void explainSumNodes(){
+        cout << "Given the root of the binary tree as input, the task is to return the sum of all the nodes in the tree." << endl;
+    }
+
+    void showExamplesSumNodes(){
+        cout << "Example 1:" << endl;
+        cout << "Input: " << endl;
+        cout << "         1" << endl;
+        cout << "      /     \\" << endl;
+        cout << "     2       3" << endl;
+        cout << "   /  \\     /  \\" << endl;
+        cout << "  4    5   6    7" << endl;
+        cout << "Output: 28" << endl;
+        cout << "Explanation: 1 + 2 + 3 + 4 + 5 + 6 + 7 = 28" << endl;
     }
 };
