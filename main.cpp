@@ -55,9 +55,12 @@ int main() {
     }
     else if (choiceDS == 3){
         list.chooseListAlgo();
+        choiceAlgo = list.selectListAlgo();
     }
     else if (choiceDS == 4){
         tree.chooseTreeAlgo();
+        choiceAlgo = tree.selectTreeAlgo();
+
     }
 
 

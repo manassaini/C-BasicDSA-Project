@@ -10,6 +10,9 @@
 class TreeNode{
 
 public:
+
+    int choice;
+
     int data;
     TreeNode* left;
     TreeNode* right;
@@ -316,5 +319,30 @@ public:
         cout << "3 --> Insert in Binary Search Tree" << endl;
         cout << "4 --> Is Same Tree?" << endl;
         cout << "5 --> Sum Nodes of Tree" << endl;
+    }
+
+    int selectTreeAlgo(){
+        cout << "Type a number to select: ";
+        cin >> choice;
+        if (choice == 1){
+            cout << endl << "You chose Pre/In/Post Order Traversal" << endl;
+        }
+        else if (choice == 2){
+            cout << endl << "You chose Search in Binary Search Tree" << endl;
+        }
+        else if (choice == 3){
+            cout << endl << "You chose Insert in Binary Search Tree" << endl;
+        }
+        else if (choice == 4){
+            cout << endl << "You chose Is Same Tree?" << endl;
+        }
+        else if (choice == 5){
+            cout << endl << "You chose Sum Nodes of Tree" << endl;
+        }
+        else{
+            cout << "--> Please select the correct number mapping!" << endl;
+            selectTreeAlgo();
+        }
+        return choice;
     }
 };

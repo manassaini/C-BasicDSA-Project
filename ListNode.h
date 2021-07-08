@@ -11,6 +11,8 @@ class Node {
 
 public:
 
+    int choice;
+
     int data;
     Node* next;
 
@@ -303,5 +305,33 @@ public:
         cout << "4 --> Delete Specific Node" << endl;
         cout << "5 --> Get Middle of List" << endl;
         cout << "6 --> Remove Duplicates" << endl;
+    }
+
+    int selectListAlgo(){
+        cout << "Type a number to select: ";
+        cin >> choice;
+        if (choice == 1){
+            cout << endl << "You chose Add Node to Front" << endl;
+        }
+        else if (choice == 2){
+            cout << endl << "You chose Add Node to End" << endl;
+        }
+        else if (choice == 3){
+            cout << endl << "You chose Find Specific Node" << endl;
+        }
+        else if (choice == 4){
+            cout << endl << "You chose Delete Specific Node" << endl;
+        }
+        else if (choice == 5){
+            cout << endl << "You chose Get Middle of List" << endl;
+        }
+        else if (choice == 6){
+            cout << endl << "You chose Remove Duplicates" << endl;
+        }
+        else{
+            cout << "--> Please select the correct number mapping!" << endl;
+            selectListAlgo();
+        }
+        return choice;
     }
 };
