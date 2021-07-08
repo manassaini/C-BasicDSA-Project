@@ -11,6 +11,9 @@
 class Stack {
 
 public:
+
+    int choice;
+
     bool balanced(string str){
         //if open, push to stack
         //if close, check if top is a match
@@ -316,6 +319,28 @@ public:
         cout << "2 --> Postfix" << endl;
         cout << "3 --> Reverse Array" << endl;
         cout << "4 --> Greater Right" << endl;
+    }
+
+    int selectStackAlgo(){
+        cout << "Type a number to select: ";
+        cin >> choice;
+        if (choice == 1){
+            cout << endl << "You chose Balanced Parantheses" << endl;
+        }
+        else if (choice == 2){
+            cout << endl << "You chose Postfix" << endl;
+        }
+        else if (choice == 3){
+            cout << endl << "You chose Reverse Array" << endl;
+        }
+        else if (choice == 4){
+            cout << endl << "You chose Greater Right" << endl;
+        }
+        else{
+            cout << "--> Please select the correct number mapping!" << endl;
+            selectStackAlgo();
+        }
+        return choice;
     }
 
 };

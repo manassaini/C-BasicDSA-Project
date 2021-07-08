@@ -12,6 +12,8 @@
 class Queue{
 public:
 
+    int choice;
+
     void printQueue(queue<int>q){
         while (!q.empty()){
             cout << q.front() << " ";
@@ -211,6 +213,25 @@ public:
         cout << "1 --> Reverse Queue" << endl;
         cout << "2 --> Modify Queue" << endl;
         cout << "3 --> Interleave Queue" << endl;
+    }
+
+    int selectQueueAlgo(){
+        cout << "Type a number to select: ";
+        cin >> choice;
+        if (choice == 1){
+            cout << endl << "You chose Reverse Queue" << endl;
+        }
+        else if (choice == 2){
+            cout << endl << "You chose Modify Queue" << endl;
+        }
+        else if (choice == 3){
+            cout << endl << "You chose Interleave Queue" << endl;
+        }
+        else{
+            cout << "--> Please select the correct number mapping!" << endl;
+            selectQueueAlgo();
+        }
+        return choice;
     }
 
 };

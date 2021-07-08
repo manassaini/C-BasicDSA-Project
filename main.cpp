@@ -42,18 +42,21 @@ int main() {
     program.IntroMessage();
     program.chooseDS();
 
-    int choice = program.selectDS();
+    int choiceDS = program.selectDS();
+    int choiceAlgo;
 
-    if (choice == 1){
+    if (choiceDS == 1){
         stack.chooseStackAlgo();
+        choiceAlgo = stack.selectStackAlgo();
     }
-    else if (choice == 2){
+    else if (choiceDS == 2){
         queue.chooseQueueAlgo();
+        choiceAlgo = queue.selectQueueAlgo();
     }
-    else if (choice == 3){
+    else if (choiceDS == 3){
         list.chooseListAlgo();
     }
-    else if (choice == 4){
+    else if (choiceDS == 4){
         tree.chooseTreeAlgo();
     }
 
