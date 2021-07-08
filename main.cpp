@@ -13,17 +13,21 @@ int main() {
     Queue q;
     //q.showInterleaveCode();
     Node list;
+    TreeNode tree(0);
 
     /*
     Node* head = list.createLinkedList(8);
     list.printList(head);
 
-     */
+
     Program program;
     program.IntroMessage();
     program.chooseDS();
     s.explainBalancedParantheses();
     s.showExamplesBalancedParantheses();
+     */
+
+    tree.showExamplesIsSameTree();
 
 
 

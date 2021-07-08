@@ -294,4 +294,14 @@ public:
         cout << "Input: 2->2->2->2->" << endl;
         cout << "Output: 2" << endl;
     }
+
+    void chooseListAlgo(){
+        cout << "Which algorithm that uses a linked list would you like to see?" << endl;
+        cout << "1 --> Add Node to Front" << endl;
+        cout << "2 --> Add Node to End" << endl;
+        cout << "3 --> Find Specific Node" << endl;
+        cout << "4 --> Delete Specific Node" << endl;
+        cout << "5 --> Get Middle of List" << endl;
+        cout << "6 --> Remove Duplicates" << endl;
+    }
 };

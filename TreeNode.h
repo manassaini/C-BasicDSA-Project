@@ -226,6 +226,20 @@ public:
         cout << "}" << endl;
     }
 
+    void explainIsSameTree(){
+        cout << "Given the roots of two binary trees p and q, write a function to check if they are the same or not.\n"
+                "\n"
+                "Two binary trees are considered the same if they are structurally identical, and the nodes have the same value." << endl;
+        cout << "*** COURTESY OF GEEKSFORGEEKS ***" << endl;
+    }
+
+    void showExamplesIsSameTree(){
+        cout << "Example 1: " << endl;
+        cout << "    1" << endl;
+        cout << "  /   \\" << endl;
+        cout << " 2     3" << endl;
+    }
+
     int sumNodes(TreeNode* root) {
         if (root == NULL){
             return 0;
