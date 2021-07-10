@@ -119,7 +119,7 @@ public:
                 exp.pop();
                 firstOperand = exp.top();
                 exp.pop();
-                if (c=='x') {
+                if (c=='*') {
                     temp = firstOperand * secondOperand;
                     exp.push(temp);
                 }
@@ -137,6 +137,7 @@ public:
                 }
             }
         }
+        cout << "The answer is: " << exp.top();
         return exp.top();
     }
 
@@ -189,6 +190,7 @@ public:
     }
 
     void explainPostfix(){
+        cout << endl << "Here is the problem description for Postfix" << endl;
         cout << "Given string S representing a postfix expression, the task is to evaluate the expression and find the final value. Operators will only include the basic arithmetic operators like *, /, + and -." << endl;
         cout << "Postfix notation is when the operator is written after the operands. For example: ab+. This is equivalent to its infix counter part, written as a + b." << endl;
         cout << "*** COURTESY OF TECHIEDELIGHT ***" << endl;
@@ -202,6 +204,26 @@ public:
         cout << "Input: S = 123+*8-" << endl;
         cout << "Output: -3" << endl;
         cout << "*** COURTESY OF TECHIEDELIGHT ***" << endl;
+    }
+
+    void showPostfixInputs(){
+        cout << "Choose your desired input for Postfix" << endl;
+        cout << "1 --> \"23*45*+\"" << endl;
+        cout << "2 --> \"231*+9-\"" << endl;
+        cout << "3 --> \"545x+5/\"" << endl;
+        cout << "4 --> \"23+\"" << endl;
+    }
+    int choosePostfixInputs(){
+        cout << "Enter your choice here:";
+        cin >> choice;
+        if (choice == 1) cout << postfix("23*45*+");
+        else if (choice == 2) cout << postfix("231*+9-");
+        else if (choice == 3) cout << postfix("545x+5/");
+        else if (choice == 4) cout << postfix("23+");
+        else{
+            cout << "Please use the correct number mapping!";
+            chooseBalancedInput();
+        }
     }
 
     void reverseArray(int arr[], int size){
@@ -357,9 +379,42 @@ public:
             cout << endl << endl << "Let's run this algorithm!" << endl;
             showBalancedInputs();
             chooseBalancedInput();
+            cout << "Would you like to run another input? (1 for y, 2 for no):";
+            cin >> choice;
+            if (choice == 1) {
+                cout << endl;
+                showBalancedInputs();
+                chooseBalancedInput();
+            }
+            cout << endl << "Would you like to see the code for this algorithm? (1 for y, 2 for no):";
+            cin >> choice;
+            if (choice == 1) {
+                showBalancedCode();
+            }
         }
         else if (choice == 2){
             explainPostfix();
+            cout << endl << "Would you like to view examples of this problem? (1 for y, 2 for no):";
+            cin >> choice;
+            if (choice == 1){
+                cout << endl;
+                showExamplesPostfix();
+            }
+            cout << endl << endl << "Let's run this algorithm!" << endl;
+            showPostfixInputs();
+            choosePostfixInputs();
+            cout << endl << "Would you like to run another input? (1 for y, 2 for no):";
+            cin >> choice;
+            if (choice == 1) {
+                cout << endl;
+                showPostfixInputs();
+                choosePostfixInputs();
+            }
+            cout << endl << "Would you like to see the code for this algorithm? (1 for y, 2 for no):";
+            cin >> choice;
+            if (choice == 1) {
+                showPostFixCode();
+            }
         }
         else if (choice == 3){
             explainReverseArray();
