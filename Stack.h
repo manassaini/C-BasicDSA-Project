@@ -261,6 +261,7 @@ public:
     }
 
     void explainReverseArray(){
+        cout << endl << "Here is the problem description for Reverse Array" << endl;
         cout << "The name for this algorithm explains itself." << endl;
         cout << "Given an array and size of array, reverse the array's contents using a stack." << endl;
         cout << "*** COURTESY OF GEEKSFORGEEKS ***" << endl;
@@ -274,6 +275,30 @@ public:
         cout << "Input: [1,0], 2" << endl;
         cout << "Output: 0,1" << endl;
         cout << "*** COURTESY OF GEEKSFORGEEKS ***" << endl;
+    }
+
+    void showReverseArrayInputs(){
+        cout << "Choose your desired input for Postfix" << endl;
+        cout << "1 --> [0,2,4,6,8], 5" << endl;
+        cout << "2 --> [4,7,2,7,4,9,0,8], 8" << endl;
+        cout << "3 --> [9,7,5,3,1], 5" << endl;
+        cout << "4 --> [9,8,7,6,5,4,3,2,2,1], 10" << endl;
+    }
+    int chooseReverseArrayInputs(){
+        int array1[] = {0,2,4,6,8};
+        int array2[] = {4,7,2,7,4,9,0,8};
+        int array3[] = {9,7,5,3,1};
+        int array4[] = {9,8,7,6,5,4,3,2,1};
+        cout << "Enter your choice here:";
+        cin >> choice;
+        if (choice == 1) reverseArray(array1, 5);
+        else if (choice == 2) reverseArray(array2, 8);
+        else if (choice == 3) reverseArray(array3, 5);
+        else if (choice == 4) reverseArray(array4, 9);
+        else{
+            cout << "Please use the correct number mapping!";
+            chooseBalancedInput();
+        }
     }
 
     void greaterRight(int arr[], int size){
@@ -418,6 +443,27 @@ public:
         }
         else if (choice == 3){
             explainReverseArray();
+            cout << endl << "Would you like to view examples of this problem? (1 for y, 2 for no):";
+            cin >> choice;
+            if (choice == 1){
+                cout << endl;
+                showExamplesReverseArray();
+            }
+            cout << endl << endl << "Let's run this algorithm!" << endl;
+            showReverseArrayInputs();
+            chooseReverseArrayInputs();
+            cout << endl << "Would you like to run another input? (1 for y, 2 for no):";
+            cin >> choice;
+            if (choice == 1) {
+                cout << endl;
+                showReverseArrayInputs();
+                chooseReverseArrayInputs();
+            }
+            cout << endl << "Would you like to see the code for this algorithm? (1 for y, 2 for no):";
+            cin >> choice;
+            if (choice == 1) {
+                showReverseArrayCode();
+            }
         }
         else if (choice == 4){
             explainGreaterRight();

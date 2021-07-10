@@ -51,7 +51,7 @@ int main() {
     }
     else if (choiceDS == 2){
         queue.chooseQueueAlgo();
-        choiceAlgo = queue.selectQueueAlgo();
+        queue.selectQueueAlgo();
     }
     else if (choiceDS == 3){
         list.chooseListAlgo();
