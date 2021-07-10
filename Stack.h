@@ -366,6 +366,7 @@ public:
     }
 
     void explainGreaterRight(){
+        cout << endl << "Here is the problem description for Reverse Array" << endl;
         cout << "Given an array and size of the array, print all the elements in the array that are greater than all the elements to its right." << endl;
         cout << "Or in other words, if an element is greater than all the elements to its right, print it." << endl;
         cout << "*** COURTESY OF GEEKSFORGEEKS ***" << endl;
@@ -380,6 +381,30 @@ public:
         cout << "Input: [2,1], 2" << endl;
         cout << "Output: 1 2" << endl;
         cout << "*** COURTESY OF GEEKSFORGEEKS ***" << endl;
+    }
+
+    void showGreaterRightInputs(){
+        cout << "Choose your desired input for Greater Right" << endl;
+        cout << "1 --> [0,2,4,3,9], 5" << endl;
+        cout << "2 --> [4,7,2,7,4,9,0,8], 8" << endl;
+        cout << "3 --> [5,6,8,2,6,0], 6" << endl;
+        cout << "4 --> [9,8,7,6,5,4,3,2,2,1], 10" << endl;
+    }
+    int chooseGreaterRightInputs(){
+        int array1[] = {0,2,4,3,9};
+        int array2[] = {4,7,6,9,2,8};
+        int array3[] = {5,6,8,2,6,0};
+        int array4[] = {9,8,7,6,5,4,3,2,1};
+        cout << "Enter your choice here:";
+        cin >> choice;
+        if (choice == 1) greaterRight(array1, 5);
+        else if (choice == 2) greaterRight(array2, 6);
+        else if (choice == 3) greaterRight(array3, 6);
+        else if (choice == 4) greaterRight(array4, 9);
+        else{
+            cout << "Please use the correct number mapping!";
+            chooseBalancedInput();
+        }
     }
 
     void chooseStackAlgo(){
@@ -467,6 +492,28 @@ public:
         }
         else if (choice == 4){
             explainGreaterRight();
+            cout << endl << "Would you like to view examples of this problem? (1 for y, 2 for no):";
+            cin >> choice;
+            if (choice == 1){
+                cout << endl;
+                showExamplesGreaterRight();
+            }
+            cout << endl << "Let's run this algorithm!" << endl;
+            showGreaterRightInputs();
+            chooseGreaterRightInputs();
+            cout << endl << "Would you like to run another input? (1 for y, 2 for no):";
+            cin >> choice;
+            if (choice == 1) {
+                cout << endl;
+                showGreaterRightInputs();
+                chooseGreaterRightInputs();
+            }
+            cout << endl << "Would you like to see the code for this algorithm? (1 for y, 2 for no):";
+            cin >> choice;
+            if (choice == 1) {
+                cout << endl;
+                showGreaterRightCode();
+            }
         }
         else{
             cout << "--> Please select the correct number mapping!" << endl;
