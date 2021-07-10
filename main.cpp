@@ -47,7 +47,7 @@ int main() {
 
     if (choiceDS == 1){
         stack.chooseStackAlgo();
-        choiceAlgo = stack.selectStackAlgo();
+        stack.selectStackAlgo();
     }
     else if (choiceDS == 2){
         queue.chooseQueueAlgo();

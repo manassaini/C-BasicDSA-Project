@@ -31,6 +31,8 @@ public:
                 }
             }
         }
+        if (braces.empty()) cout << "String is balanced!" << endl;
+        else cout << "String is not balanced!" << endl;
         return braces.empty();      //if a match is found for every pair, the stack will be empty
     }
 
@@ -52,7 +54,7 @@ public:
     }
 
     void explainBalancedParantheses(){
-        cout << "Here is the problem description for Balanced Parantheses" << endl;
+        cout << endl << "Here is the problem description for Balanced Parantheses" << endl;
         cout << "Given a string s containing just the characters '(', ')', '{', '}', '[' and ']', determine if the input string is valid.";
         cout << "An input string is valid if: " << endl;
         cout << "      1. Open brackets must be closed by the same type of brackets." << endl;
@@ -70,6 +72,26 @@ public:
         cout << "Input: s = (]" << endl;
         cout << "Output: false" << endl;
         cout << "*** COURTESY OF LEETCODE ***";
+    }
+
+    void showBalancedInputs(){
+        cout << "Choose your desired input for Balanced Parantheses" << endl;
+        cout << "1 --> \"{[{}{}]}[()]\"" << endl;
+        cout << "2 --> \"([)]\"" << endl;
+        cout << "3 --> \"{()}[]\"" << endl;
+        cout << "4 --> \"[{]]()\"" << endl;
+    }
+    int chooseBalancedInput(){
+        cout << "Enter your choice here:";
+        cin >> choice;
+        if (choice == 1) cout << balanced("{[{}{}]}[()]");
+        else if (choice == 2) cout << balanced("([)]");
+        else if (choice == 3) cout << balanced("{()}[]");
+        else if (choice == 4) cout << balanced("[{]]()");
+        else{
+            cout << "Please use the correct number mapping!";
+            chooseBalancedInput();
+        }
     }
 
     int postfix(string str){
@@ -325,16 +347,25 @@ public:
         cout << "Type a number to select: ";
         cin >> choice;
         if (choice == 1){
-            cout << endl << "You chose Balanced Parantheses" << endl;
+            explainBalancedParantheses();
+            cout << endl << "Would you like to view examples of this problem? (1 for y, 2 for no):";
+            cin >> choice;
+            if (choice == 1){
+                cout << endl;
+                showExamplesBalancedParantheses();
+            }
+            cout << endl << endl << "Let's run this algorithm!" << endl;
+            showBalancedInputs();
+            chooseBalancedInput();
         }
         else if (choice == 2){
-            cout << endl << "You chose Postfix" << endl;
+            explainPostfix();
         }
         else if (choice == 3){
-            cout << endl << "You chose Reverse Array" << endl;
+            explainReverseArray();
         }
         else if (choice == 4){
-            cout << endl << "You chose Greater Right" << endl;
+            explainGreaterRight();
         }
         else{
             cout << "--> Please select the correct number mapping!" << endl;
