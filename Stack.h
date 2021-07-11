@@ -389,19 +389,19 @@ public:
     void showGreaterRightInputs(){
         cout << "Choose your desired input for Greater Right" << endl;
         cout << "1 --> [0,2,4,3,9], 5" << endl;
-        cout << "2 --> [4,7,2,7,4,9,0,8], 8" << endl;
+        cout << "2 --> [4,2,6,7,4,5,3], 7" << endl;
         cout << "3 --> [5,6,8,2,6,0], 6" << endl;
         cout << "4 --> [9,8,7,6,5,4,3,2,2,1], 10" << endl;
     }
     int chooseGreaterRightInputs(){
         int array1[] = {0,2,4,3,9};
-        int array2[] = {4,7,6,9,2,8};
+        int array2[] = {4,2,6,7,4,5,3};
         int array3[] = {5,6,8,2,6,0};
         int array4[] = {9,8,7,6,5,4,3,2,1};
         cout << "Enter your choice here:";
         cin >> choice;
         if (choice == 1) greaterRight(array1, 5);
-        else if (choice == 2) greaterRight(array2, 6);
+        else if (choice == 2) greaterRight(array2, 7);
         else if (choice == 3) greaterRight(array3, 6);
         else if (choice == 4) greaterRight(array4, 9);
         else{
