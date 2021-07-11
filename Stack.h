@@ -309,6 +309,9 @@ public:
         stack<int>nums;
         nums.push(arr[0]);
         for (int i = 1; i < size; ++i){
+            if (nums.empty()){
+                nums.push(arr[i]);
+            }
             if (arr[i] < nums.top()){
                 nums.push(arr[i]);
             }
