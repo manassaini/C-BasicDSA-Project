@@ -39,29 +39,39 @@ int main() {
     Node list;
     TreeNode tree(0);
 
+    int mainRunner = 1;
     program.IntroMessage();
     program.chooseDS();
 
-    int choiceDS = program.selectDS();
-    int choiceAlgo;
+    while (mainRunner == 1){
+        int choiceDS = program.selectDS();
+        //int choiceAlgo;
 
-    if (choiceDS == 1){
-        stack.chooseStackAlgo();
-        stack.selectStackAlgo();
-    }
-    else if (choiceDS == 2){
-        queue.chooseQueueAlgo();
-        queue.selectQueueAlgo();
-    }
-    else if (choiceDS == 3){
-        list.chooseListAlgo();
-        choiceAlgo = list.selectListAlgo();
-    }
-    else if (choiceDS == 4){
-        tree.chooseTreeAlgo();
-        choiceAlgo = tree.selectTreeAlgo();
+        if (choiceDS == 1){
+            stack.chooseStackAlgo();
+            stack.selectStackAlgo();
+            cout << "Would you like to work with another DS? (1 for Yes | 2 for No):";
+            cin >> mainRunner;
+            if (mainRunner == 1) {
+                cout << endl;
+                program.chooseDS();
+            }
+        }
+        else if (choiceDS == 2){
+            queue.chooseQueueAlgo();
+            queue.selectQueueAlgo();
+        }
+        else if (choiceDS == 3){
+            list.chooseListAlgo();
+            //choiceAlgo = list.selectListAlgo();
+        }
+        else if (choiceDS == 4){
+            tree.chooseTreeAlgo();
+            //choiceAlgo = tree.selectTreeAlgo();
 
+        }
     }
+
 
 
 

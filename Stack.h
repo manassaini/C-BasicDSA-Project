@@ -13,8 +13,9 @@ class Stack {
 public:
 
     int choice;
+    int runner = 1;
 
-    bool balanced(string str){
+    void balanced(string str){
         //if open, push to stack
         //if close, check if top is a match
         //if the top is a match, then pop the top
@@ -33,7 +34,7 @@ public:
         }
         if (braces.empty()) cout << "String is balanced!" << endl;
         else cout << "String is not balanced!" << endl;
-        return braces.empty();      //if a match is found for every pair, the stack will be empty
+        //return braces.empty();      //if a match is found for every pair, the stack will be empty
     }
 
     void showBalancedCode(){
@@ -82,19 +83,27 @@ public:
         cout << "4 --> \"[{]]()\"" << endl;
     }
     int chooseBalancedInput(){
-        cout << "Enter your choice here:";
-        cin >> choice;
-        if (choice == 1) cout << balanced("{[{}{}]}[()]");
-        else if (choice == 2) cout << balanced("([)]");
-        else if (choice == 3) cout << balanced("{()}[]");
-        else if (choice == 4) cout << balanced("[{]]()");
-        else{
-            cout << "Please use the correct number mapping!";
-            chooseBalancedInput();
+        while (runner == 1){
+            cout << "Enter your desired input here:";
+            cin >> choice;
+            if (choice == 1) balanced("{[{}{}]}[()]");
+            else if (choice == 2) balanced("([)]");
+            else if (choice == 3) balanced("{()}[]");
+            else if (choice == 4) balanced("[{]]()");
+            else{
+                cout << "Please use the correct number mapping!";
+                chooseBalancedInput();
+            }
+            cout << endl << "Would you like to run another input? (1 for Yes | 2 for No):";
+            cin >> runner;
         }
     }
 
-    int postfix(string str){
+
+
+
+
+    void postfix(string str){
         //read left to right
         //if c is a number, push to stack
         //if c is an operator, peek 2 top elements
@@ -138,7 +147,7 @@ public:
             }
         }
         cout << "The answer is: " << exp.top();
-        return exp.top();
+        //return exp.top();
     }
 
     void showPostFixCode(){
@@ -214,17 +223,27 @@ public:
         cout << "4 --> \"23+\"" << endl;
     }
     int choosePostfixInputs(){
-        cout << "Enter your choice here:";
-        cin >> choice;
-        if (choice == 1) cout << postfix("23*45*+");
-        else if (choice == 2) cout << postfix("231*+9-");
-        else if (choice == 3) cout << postfix("545x+5/");
-        else if (choice == 4) cout << postfix("23+");
-        else{
-            cout << "Please use the correct number mapping!";
-            chooseBalancedInput();
+        while (runner == 1) {
+            cout << "Enter your desired input here:";
+            cin >> choice;
+            if (choice == 1) postfix("23*45*+");
+            else if (choice == 2) postfix("231*+9-");
+            else if (choice == 3) postfix("545*+5/");
+            else if (choice == 4) postfix("23+");
+            else{
+                cout << "Please use the correct number mapping!";
+                chooseBalancedInput();
+            }
+            cout << endl << "Would you like to run another input? (1 for Yes | 2 for No):";
+            cin >> runner;
         }
+
     }
+
+
+
+
+
 
     void reverseArray(int arr[], int size){
         stack<int>nums;
@@ -237,6 +256,7 @@ public:
             nums.pop();
             index++;
         }
+        cout << "The reversed array is: ";
         for (int i = 0; i < size; ++i){
             cout << arr[i] << " ";
         }
@@ -289,17 +309,29 @@ public:
         int array2[] = {4,7,2,7,4,9,0,8};
         int array3[] = {9,7,5,3,1};
         int array4[] = {9,8,7,6,5,4,3,2,1};
-        cout << "Enter your choice here:";
-        cin >> choice;
-        if (choice == 1) reverseArray(array1, 5);
-        else if (choice == 2) reverseArray(array2, 8);
-        else if (choice == 3) reverseArray(array3, 5);
-        else if (choice == 4) reverseArray(array4, 9);
-        else{
-            cout << "Please use the correct number mapping!";
-            chooseBalancedInput();
+
+        while (runner == 1){
+            cout << "Enter your desired input here:";
+            cin >> choice;
+            if (choice == 1) reverseArray(array1, 5);
+            else if (choice == 2) reverseArray(array2, 8);
+            else if (choice == 3) reverseArray(array3, 5);
+            else if (choice == 4) reverseArray(array4, 9);
+            else{
+                cout << "Please use the correct number mapping!";
+                chooseBalancedInput();
+            }
+            cout << endl << "Would you like to run another input? (1 for Yes | 2 for No):";
+            cin >> runner;
         }
+
     }
+
+
+
+
+
+
 
     void greaterRight(int arr[], int size){
         //push first element in stack
@@ -329,6 +361,7 @@ public:
                 }
             }
         }
+        cout << "Answer: ";
         while (!nums.empty()){
             cout << nums.top() << " ";
             nums.pop();
@@ -370,7 +403,7 @@ public:
 
     void explainGreaterRight(){
         cout << endl << "Here is the problem description for Reverse Array" << endl;
-        cout << "Given an array and size of the array, print all the elements in the array that are greater than all the elements to its right." << endl;
+        cout << "Given an array and size of array, print all elements in the array that are greater than all the elements to its right." << endl;
         cout << "Or in other words, if an element is greater than all the elements to its right, print it." << endl;
         cout << "*** COURTESY OF GEEKSFORGEEKS ***" << endl;
     }
@@ -388,27 +421,38 @@ public:
 
     void showGreaterRightInputs(){
         cout << "Choose your desired input for Greater Right" << endl;
-        cout << "1 --> [0,2,4,3,9], 5" << endl;
+        cout << "1 --> [0,2,4,3,2], 5" << endl;
         cout << "2 --> [4,2,6,7,4,5,3], 7" << endl;
         cout << "3 --> [5,6,8,2,6,0], 6" << endl;
         cout << "4 --> [9,8,7,6,5,4,3,2,2,1], 10" << endl;
     }
     int chooseGreaterRightInputs(){
-        int array1[] = {0,2,4,3,9};
+        int array1[] = {0,2,4,3,2};
         int array2[] = {4,2,6,7,4,5,3};
         int array3[] = {5,6,8,2,6,0};
         int array4[] = {9,8,7,6,5,4,3,2,1};
-        cout << "Enter your choice here:";
-        cin >> choice;
-        if (choice == 1) greaterRight(array1, 5);
-        else if (choice == 2) greaterRight(array2, 7);
-        else if (choice == 3) greaterRight(array3, 6);
-        else if (choice == 4) greaterRight(array4, 9);
-        else{
-            cout << "Please use the correct number mapping!";
-            chooseBalancedInput();
+
+        while (runner == 1){
+            cout << "Enter your desired input here:";
+            cin >> choice;
+            if (choice == 1) greaterRight(array1, 5);
+            else if (choice == 2) greaterRight(array2, 7);
+            else if (choice == 3) greaterRight(array3, 6);
+            else if (choice == 4) greaterRight(array4, 9);
+            else{
+                cout << "Please use the correct number mapping!";
+                chooseBalancedInput();
+            }
+            cout << endl << "Would you like to run another algorithm? (1 for Yes | 2 for No):";
+            cin >> runner;
         }
     }
+
+
+
+
+
+
 
     void chooseStackAlgo(){
         cout << "Which algorithm that uses a stack would you like to see?" << endl;
@@ -423,79 +467,61 @@ public:
         cin >> choice;
         if (choice == 1){
             explainBalancedParantheses();
-            cout << endl << "Would you like to view examples of this problem? (1 for y, 2 for no):";
+            cout << endl << "Would you like to view examples of this problem? (1 for Yes | 2 for No):";
             cin >> choice;
             if (choice == 1){
                 cout << endl;
                 showExamplesBalancedParantheses();
             }
-            cout << endl << endl << "Let's run this algorithm!" << endl;
+            cout << endl << "Let's run this algorithm!" << endl;
             showBalancedInputs();
             chooseBalancedInput();
-            cout << "Would you like to run another input? (1 for y, 2 for no):";
+            cout << endl << "Would you like to see the code for this algorithm? (1 for Yes | 2 for No):";
             cin >> choice;
             if (choice == 1) {
                 cout << endl;
-                showBalancedInputs();
-                chooseBalancedInput();
-            }
-            cout << endl << "Would you like to see the code for this algorithm? (1 for y, 2 for no):";
-            cin >> choice;
-            if (choice == 1) {
                 showBalancedCode();
             }
         }
         else if (choice == 2){
             explainPostfix();
-            cout << endl << "Would you like to view examples of this problem? (1 for y, 2 for no):";
+            cout << endl << "Would you like to view examples of this problem? (1 for Yes | 2 for No):";
             cin >> choice;
             if (choice == 1){
                 cout << endl;
                 showExamplesPostfix();
             }
-            cout << endl << endl << "Let's run this algorithm!" << endl;
+            cout << endl << "Let's run this algorithm!" << endl;
             showPostfixInputs();
             choosePostfixInputs();
-            cout << endl << "Would you like to run another input? (1 for y, 2 for no):";
+            cout << endl << "Would you like to see the code for this algorithm? (1 for Yes | 2 for No):";
             cin >> choice;
             if (choice == 1) {
                 cout << endl;
-                showPostfixInputs();
-                choosePostfixInputs();
-            }
-            cout << endl << "Would you like to see the code for this algorithm? (1 for y, 2 for no):";
-            cin >> choice;
-            if (choice == 1) {
                 showPostFixCode();
             }
         }
         else if (choice == 3){
             explainReverseArray();
-            cout << endl << "Would you like to view examples of this problem? (1 for y, 2 for no):";
+            cout << endl << "Would you like to view examples of this problem? (1 for Yes | 2 for No):";
             cin >> choice;
             if (choice == 1){
                 cout << endl;
                 showExamplesReverseArray();
             }
-            cout << endl << endl << "Let's run this algorithm!" << endl;
+            cout << endl << "Let's run this algorithm!" << endl;
             showReverseArrayInputs();
             chooseReverseArrayInputs();
-            cout << endl << "Would you like to run another input? (1 for y, 2 for no):";
+            cout << endl << "Would you like to see the code for this algorithm? (1 for Yes | 2 for No):";
             cin >> choice;
             if (choice == 1) {
                 cout << endl;
-                showReverseArrayInputs();
-                chooseReverseArrayInputs();
-            }
-            cout << endl << "Would you like to see the code for this algorithm? (1 for y, 2 for no):";
-            cin >> choice;
-            if (choice == 1) {
                 showReverseArrayCode();
             }
         }
         else if (choice == 4){
             explainGreaterRight();
-            cout << endl << "Would you like to view examples of this problem? (1 for y, 2 for no):";
+            cout << endl << "Would you like to view examples of this problem? (1 for Yes | 2 for No):";
             cin >> choice;
             if (choice == 1){
                 cout << endl;
@@ -504,14 +530,7 @@ public:
             cout << endl << "Let's run this algorithm!" << endl;
             showGreaterRightInputs();
             chooseGreaterRightInputs();
-            cout << endl << "Would you like to run another input? (1 for y, 2 for no):";
-            cin >> choice;
-            if (choice == 1) {
-                cout << endl;
-                showGreaterRightInputs();
-                chooseGreaterRightInputs();
-            }
-            cout << endl << "Would you like to see the code for this algorithm? (1 for y, 2 for no):";
+            cout << endl << "Would you like to see the code for this algorithm? (1 for Yes | 2 for No):";
             cin >> choice;
             if (choice == 1) {
                 cout << endl;
