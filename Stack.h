@@ -36,7 +36,7 @@ public:
             }
         }
         if (braces.empty()) cout << "String is balanced!" << endl;
-        else cout << "String is not balanced!" << endl;
+        else cout << "String is not balanced!";
         //return braces.empty();      //if a match is found for every pair, the stack will be empty
     }
 
@@ -212,7 +212,7 @@ public:
     void showExamplesPostfix(){
         cout << "Example 1:" << endl;
         cout << "Input: S = 231*+9-" << endl;
-        cout << "Output: -4" << endl;
+        cout << "Output: -4" << endl << endl;
         cout << "Example 2:" << endl;
         cout << "Input: S = 123+*8-" << endl;
         cout << "Output: -3" << endl;
@@ -295,7 +295,7 @@ public:
     void showExamplesReverseArray(){
         cout << "Example 1:" << endl;
         cout << "Input: [0,1,2,3,4,5], 6" << endl;
-        cout << "Output: 5,4,3,2,1,0" << endl;
+        cout << "Output: 5,4,3,2,1,0" << endl << endl;
         cout << "Example 2:" << endl;
         cout << "Input: [1,0], 2" << endl;
         cout << "Output: 0,1" << endl;
@@ -418,7 +418,7 @@ public:
         cout << "Example 1:" << endl;
         cout << "Input: [10,4,6,3,5], 5" << endl;
         cout << "Output: 5 6 10" << endl;
-        cout << "Explanation: 5 is greater than all the elements to its right, so is 6, and so is 10." << endl;
+        cout << "Explanation: 5 is greater than all the elements to its right, so is 6, and so is 10." << endl << endl;
         cout << "Example 2:" << endl;
         cout << "Input: [2,1], 2" << endl;
         cout << "Output: 1 2" << endl;
