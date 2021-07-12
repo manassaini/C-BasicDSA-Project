@@ -13,6 +13,9 @@ class Queue{
 public:
 
     int choice;
+    int revRunner = 1;
+    int modifyRunner = 1;
+    int interleaveRunner = 1;
 
     void printQueue(queue<int>q){
         while (!q.empty()){
@@ -68,6 +71,51 @@ public:
         cout << "Output: 1 2 3 4" << endl;
         cout << "*** COURTESY OF GEEKSFORGEEKS ***" << endl;
     }
+
+    void showRevInputs(){
+        cout << "Choose your desired input for Reverse Queue" << endl;
+        cout << "1 --> 1 2 3 4 5 6" << endl;
+        cout << "2 --> 4 5 6 1 2" << endl;
+        cout << "3 --> 10 9 8 7 6 5 4 3 2 1" << endl;
+        cout << "4 --> 5 10 2 3 5 9" << endl;
+    }
+
+    int chooseRevInputs(){
+        queue<int>q1,q2,q3,q4;
+        q1.push(6); q1.push(5); q1.push(4); q1.push(3); q1.push(2); q1.push(1);
+        q2.push(2); q2.push(1); q2.push(6); q2.push(5); q2.push(4);
+        for (int i = 1; i <= 10; ++i){
+            q3.push(i);
+        }
+        q4.push(9); q4.push(5); q4.push(3); q4.push(2); q4.push(10); q4.push(5);
+
+        while (revRunner == 1) {
+            cout << "Enter your desired input here:";
+            cin >> choice;
+            if (choice == 1) {
+
+            }
+            else if (choice == 2) {
+                q1 = rev(q1);
+                printQueue(q1);
+            }
+            else if (choice == 3) {
+                q2 = rev(q2);
+                printQueue(q2);
+            }
+            else if (choice == 4) {
+                q3 = rev(q3);
+                printQueue(q3);
+            }
+            else{
+                cout << "Please use the correct number mapping!";
+                chooseRevInputs();
+            }
+            cout << endl << "Would you like to run another input? (1 for Yes | 2 for No):";
+            cin >> revRunner;
+        }
+    }
+
 
 
 
@@ -247,7 +295,22 @@ public:
         cout << "Type a number to select: ";
         cin >> choice;
         if (choice == 1){
-            cout << endl << "You chose Reverse Queue" << endl;
+            expl();
+            cout << endl << "Would you like to view examples of this problem? (1 for Yes | 2 for No):";
+            cin >> choice;
+            if (choice == 1){
+                cout << endl;
+                showExamplesBalancedParantheses();
+            }
+            cout << endl << "Let's run this algorithm!" << endl;
+            showBalancedInputs();
+            chooseBalancedInput();
+            cout << endl << "Would you like to see the code for this algorithm? (1 for Yes | 2 for No):";
+            cin >> choice;
+            if (choice == 1) {
+                cout << endl;
+                showBalancedCode();
+            }
         }
         else if (choice == 2){
             cout << endl << "You chose Modify Queue" << endl;
