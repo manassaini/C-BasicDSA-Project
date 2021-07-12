@@ -48,6 +48,7 @@ int main() {
         //int choiceAlgo;
 
         if (choiceDS == 1){
+            mainRunner = 1;
             stack.chooseStackAlgo();
             stack.selectStackAlgo();
             cout << endl << "Would you like to work with another DS? (1 for Yes | 2 for No):";
@@ -61,16 +62,28 @@ int main() {
                 cout << "Goodbye! fix this later blah" << endl;
             }
         }
-
         else if (choiceDS == 2){
+            mainRunner = 1;
             queue.chooseQueueAlgo();
             queue.selectQueueAlgo();
+            cout << endl << "Would you like to work with another DS? (1 for Yes | 2 for No):";
+            cin >> mainRunner;
+            if (mainRunner == 1){
+                queue.resetVariables();
+                cout << endl;
+                program.chooseDS();
+            }
+            else {
+                cout << "Goodbye! fix this later blah" << endl;
+            }
         }
         else if (choiceDS == 3){
+            mainRunner = 1;
             list.chooseListAlgo();
             //choiceAlgo = list.selectListAlgo();
         }
         else if (choiceDS == 4){
+            mainRunner = 1;
             tree.chooseTreeAlgo();
             //choiceAlgo = tree.selectTreeAlgo();
 

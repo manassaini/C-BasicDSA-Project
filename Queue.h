@@ -37,7 +37,7 @@ public:
             q.push(temp.top());
             temp.pop();
         }
-
+        cout << "Reversed queue: ";
         return q;
     }
 
@@ -58,14 +58,14 @@ public:
     }
 
     void explainReverseQueue(){
-        cout << "Given a Queue Q containing N elements. The task is to reverse the Queue" << endl;
+        cout << endl << "Given a Queue Q containing N elements. The task is to reverse the Queue" << endl;
         cout << "*** COURTESY OF GEEKSFORGEEKS ***" << endl;
     }
 
     void showExamplesRevQueue(){
         cout << "Example 1:" << endl;
         cout << "Input: 4 3 1 10 2 6" << endl;
-        cout << "Output: 6 2 10 1 3 4" << endl;
+        cout << "Output: 6 2 10 1 3 4" << endl << endl;
         cout << "Example 2:" << endl;
         cout << "Input: 4 3 2 1" << endl;
         cout << "Output: 1 2 3 4" << endl;
@@ -74,10 +74,10 @@ public:
 
     void showRevInputs(){
         cout << "Choose your desired input for Reverse Queue" << endl;
-        cout << "1 --> 1 2 3 4 5 6" << endl;
-        cout << "2 --> 4 5 6 1 2" << endl;
-        cout << "3 --> 10 9 8 7 6 5 4 3 2 1" << endl;
-        cout << "4 --> 5 10 2 3 5 9" << endl;
+        cout << "1 --> 6 5 4 3 2 1" << endl;
+        cout << "2 --> 2 1 6 5 4" << endl;
+        cout << "3 --> 1 2 3 4 5 6 7 8 9 10" << endl;
+        cout << "4 --> 9 5 3 2 10 6" << endl;
     }
 
     int chooseRevInputs(){
@@ -87,25 +87,26 @@ public:
         for (int i = 1; i <= 10; ++i){
             q3.push(i);
         }
-        q4.push(9); q4.push(5); q4.push(3); q4.push(2); q4.push(10); q4.push(5);
+        q4.push(9); q4.push(5); q4.push(3); q4.push(2); q4.push(10); q4.push(6);
 
         while (revRunner == 1) {
             cout << "Enter your desired input here:";
             cin >> choice;
             if (choice == 1) {
-
-            }
-            else if (choice == 2) {
                 q1 = rev(q1);
                 printQueue(q1);
             }
-            else if (choice == 3) {
+            else if (choice == 2) {
                 q2 = rev(q2);
                 printQueue(q2);
             }
-            else if (choice == 4) {
+            else if (choice == 3) {
                 q3 = rev(q3);
                 printQueue(q3);
+            }
+            else if (choice == 4) {
+                q4 = rev(q4);
+                printQueue(q4);
             }
             else{
                 cout << "Please use the correct number mapping!";
@@ -263,7 +264,7 @@ public:
     }
 
     void explainInterleave(){
-        cout << "Given a queue of integers of even length, rearrange the elements by interleaving the first half of the queue with the second half of the queue.\n"
+        cout << endl << "Given a queue of integers of even length, rearrange the elements by interleaving the first half of the queue with the second half of the queue.\n"
                 "\n"
                 "Only a stack can be used as an auxiliary space.";
     }
@@ -271,7 +272,7 @@ public:
     void showExamplesInterleave(){
         cout << "Example 1: " << endl;
         cout << "Input: 1 2 3 4" << endl;
-        cout << "Output: 1 3 2 4" << endl;
+        cout << "Output: 1 3 2 4" << endl << endl;
         cout << "Example 2: " << endl;
         cout << "Input: 11 12 13 14 15 16 17 18 19 20" << endl;
         cout << "Output: 11 16 12 17 13 18 14 19 15 20" << endl;
@@ -295,21 +296,21 @@ public:
         cout << "Type a number to select: ";
         cin >> choice;
         if (choice == 1){
-            expl();
+            explainReverseQueue();
             cout << endl << "Would you like to view examples of this problem? (1 for Yes | 2 for No):";
             cin >> choice;
             if (choice == 1){
                 cout << endl;
-                showExamplesBalancedParantheses();
+                showExamplesRevQueue();
             }
             cout << endl << "Let's run this algorithm!" << endl;
-            showBalancedInputs();
-            chooseBalancedInput();
+            showRevInputs();
+            chooseRevInputs();
             cout << endl << "Would you like to see the code for this algorithm? (1 for Yes | 2 for No):";
             cin >> choice;
             if (choice == 1) {
                 cout << endl;
-                showBalancedCode();
+                showRevCode();
             }
         }
         else if (choice == 2){
@@ -323,6 +324,12 @@ public:
             selectQueueAlgo();
         }
         return choice;
+    }
+
+    void resetVariables(){
+        revRunner = 1;
+        modifyRunner = 1;
+        interleaveRunner = 1;
     }
 
 };
