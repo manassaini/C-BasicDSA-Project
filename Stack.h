@@ -13,7 +13,10 @@ class Stack {
 public:
 
     int choice;
-    int runner = 1;
+    int balancedRunner = 1;
+    int fixRunner = 1;
+    int reverseRunner = 1;
+    int greaterRunner = 1;
 
     void balanced(string str){
         //if open, push to stack
@@ -72,7 +75,7 @@ public:
         cout << "Output: true" << endl << endl;
         cout << "Input: s = (]" << endl;
         cout << "Output: false" << endl;
-        cout << "*** COURTESY OF LEETCODE ***";
+        cout << "*** COURTESY OF LEETCODE ***" << endl;
     }
 
     void showBalancedInputs(){
@@ -82,8 +85,9 @@ public:
         cout << "3 --> \"{()}[]\"" << endl;
         cout << "4 --> \"[{]]()\"" << endl;
     }
+
     int chooseBalancedInput(){
-        while (runner == 1){
+        while (balancedRunner == 1){
             cout << "Enter your desired input here:";
             cin >> choice;
             if (choice == 1) balanced("{[{}{}]}[()]");
@@ -95,7 +99,7 @@ public:
                 chooseBalancedInput();
             }
             cout << endl << "Would you like to run another input? (1 for Yes | 2 for No):";
-            cin >> runner;
+            cin >> balancedRunner;
         }
     }
 
@@ -222,8 +226,9 @@ public:
         cout << "3 --> \"545x+5/\"" << endl;
         cout << "4 --> \"23+\"" << endl;
     }
+
     int choosePostfixInputs(){
-        while (runner == 1) {
+        while (fixRunner == 1) {
             cout << "Enter your desired input here:";
             cin >> choice;
             if (choice == 1) postfix("23*45*+");
@@ -235,7 +240,7 @@ public:
                 chooseBalancedInput();
             }
             cout << endl << "Would you like to run another input? (1 for Yes | 2 for No):";
-            cin >> runner;
+            cin >> fixRunner;
         }
 
     }
@@ -304,13 +309,14 @@ public:
         cout << "3 --> [9,7,5,3,1], 5" << endl;
         cout << "4 --> [9,8,7,6,5,4,3,2,2,1], 10" << endl;
     }
+
     int chooseReverseArrayInputs(){
         int array1[] = {0,2,4,6,8};
         int array2[] = {4,7,2,7,4,9,0,8};
         int array3[] = {9,7,5,3,1};
         int array4[] = {9,8,7,6,5,4,3,2,1};
 
-        while (runner == 1){
+        while (reverseRunner == 1){
             cout << "Enter your desired input here:";
             cin >> choice;
             if (choice == 1) reverseArray(array1, 5);
@@ -322,7 +328,7 @@ public:
                 chooseBalancedInput();
             }
             cout << endl << "Would you like to run another input? (1 for Yes | 2 for No):";
-            cin >> runner;
+            cin >> reverseRunner;
         }
 
     }
@@ -426,13 +432,14 @@ public:
         cout << "3 --> [5,6,8,2,6,0], 6" << endl;
         cout << "4 --> [9,8,7,6,5,4,3,2,2,1], 10" << endl;
     }
+
     int chooseGreaterRightInputs(){
         int array1[] = {0,2,4,3,2};
         int array2[] = {4,2,6,7,4,5,3};
         int array3[] = {5,6,8,2,6,0};
         int array4[] = {9,8,7,6,5,4,3,2,1};
 
-        while (runner == 1){
+        while (greaterRunner == 1){
             cout << "Enter your desired input here:";
             cin >> choice;
             if (choice == 1) greaterRight(array1, 5);
@@ -444,7 +451,7 @@ public:
                 chooseBalancedInput();
             }
             cout << endl << "Would you like to run another algorithm? (1 for Yes | 2 for No):";
-            cin >> runner;
+            cin >> greaterRunner;
         }
     }
 
@@ -542,6 +549,13 @@ public:
             selectStackAlgo();
         }
         return choice;
+    }
+
+    void resetVariables(){
+        balancedRunner = 1;
+        fixRunner = 1;
+        reverseRunner = 1;
+        greaterRunner = 1;
     }
 
 };

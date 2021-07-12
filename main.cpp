@@ -50,9 +50,10 @@ int main() {
         if (choiceDS == 1){
             stack.chooseStackAlgo();
             stack.selectStackAlgo();
-            cout << "Would you like to work with another DS? (1 for Yes | 2 for No):";
+            cout << endl << endl << "Would you like to work with another DS? (1 for Yes | 2 for No):";
             cin >> mainRunner;
             if (mainRunner == 1) {
+                stack.resetVariables();
                 cout << endl;
                 program.chooseDS();
             }
