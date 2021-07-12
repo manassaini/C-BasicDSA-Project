@@ -21,6 +21,8 @@ public:
         }
     }
 
+
+
     //works in gg compiler
     queue<int> rev(queue<int> q){
         stack<int>temp;
@@ -66,6 +68,11 @@ public:
         cout << "Output: 1 2 3 4" << endl;
         cout << "*** COURTESY OF GEEKSFORGEEKS ***" << endl;
     }
+
+
+
+
+
 
     void modifyQueue(queue<int> q, int k){
         stack<int>s;
@@ -116,12 +123,26 @@ public:
     }
 
     void explainModifyQueue(){
-
+        cout << endl << "Given an integer K and a queue of integers, we need to reverse the order of"
+                        "the first K elements of the queue, leaving the other elements in the same relative order." << endl;
+        cout << "*** COURTESY OF GEEKSFORGEEKS ***";
     }
 
     void showExamplesModifyQueue(){
-
+        cout << "Example 1:" << endl;
+        cout << "Input: 1 2 3 4 5, 3" << endl;
+        cout << "Output: 3 2 1 4 5" << endl;
+        cout << "Explanation: The output has the first three elements of the queue reversed, the rest are the same." << endl << endl;
+        cout << "Example 2:" << endl;
+        cout << "Input: 4 3 2 1, 4" << endl;
+        cout << "Output: 1 2 3 4" << endl;
+        cout << "Explanation: The output has reversed all the elements of the queue, because there are 4 elements." << endl;
+        cout << "*** COURTESY OF GEEKSFORGEEKS ***" << endl;
     }
+
+
+
+
 
     void interLeave(queue<int>q){
         int queueSize = q.size();
@@ -207,6 +228,13 @@ public:
         cout << "Input: 11 12 13 14 15 16 17 18 19 20" << endl;
         cout << "Output: 11 16 12 17 13 18 14 19 15 20" << endl;
     }
+
+
+
+
+
+
+
 
     void chooseQueueAlgo(){
         cout << "Which algorithm that uses a queue would you like to see?" << endl;
