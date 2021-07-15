@@ -189,6 +189,47 @@ public:
         cout << "*** COURTESY OF GEEKSFORGEEKS ***" << endl;
     }
 
+    void showModifyInputs(){
+        cout << "Choose your desired input for Modify Queue" << endl;
+        cout << "1 --> 1 2 3 4 5 6, 2" << endl;
+        cout << "2 --> 4 5 6 1 2, 5" << endl;
+        cout << "3 --> 10 9 8 7 6 5 4 3 2 1, 4" << endl;
+        cout << "4 --> 6 10 2 3 5 9, 3" << endl;
+    }
+
+    void chooseModifyInputs(){
+        queue<int>q1,q2,q3,q4;
+        q1.push(6); q1.push(5); q1.push(4); q1.push(3); q1.push(2); q1.push(1);
+        q2.push(2); q2.push(1); q2.push(6); q2.push(5); q2.push(4);
+        for (int i = 1; i <= 10; ++i){
+            q3.push(i);
+        }
+        q4.push(9); q4.push(5); q4.push(3); q4.push(2); q4.push(10); q4.push(6);
+
+        while (modifyRunner == 1) {
+            cout << "Enter your desired input here:";
+            cin >> choice;
+            if (choice == 1) {
+                modifyQueue(q1, 2);
+            }
+            else if (choice == 2) {
+                modifyQueue(q2, 5);
+            }
+            else if (choice == 3) {
+                modifyQueue(q3, 4);
+            }
+            else if (choice == 4) {
+                modifyQueue(q4, 3);
+            }
+            else{
+                cout << "Please use the correct number mapping!";
+                chooseModifyInputs();
+            }
+            cout << endl << "Would you like to run another input? (1 for Yes | 2 for No):";
+            cin >> modifyRunner;
+        }
+    }
+
 
 
 
@@ -314,7 +355,22 @@ public:
             }
         }
         else if (choice == 2){
-            cout << endl << "You chose Modify Queue" << endl;
+            explainModifyQueue();
+            cout << endl << "Would you like to view examples of this problem? (1 for Yes | 2 for No):";
+            cin >> choice;
+            if (choice == 1){
+                cout << endl;
+                showExamplesModifyQueue();
+            }
+            cout << endl << "Let's run this algorithm!" << endl;
+            showModifyInputs();
+            chooseModifyInputs();
+            cout << endl << "Would you like to see the code for this algorithm? (1 for Yes | 2 for No):";
+            cin >> choice;
+            if (choice == 1) {
+                cout << endl;
+                showModifyQueueCode();
+            }
         }
         else if (choice == 3){
             cout << endl << "You chose Interleave Queue" << endl;
