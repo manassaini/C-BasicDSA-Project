@@ -175,7 +175,6 @@ public:
         cout << endl << "Given an integer K and a queue of integers, we need to reverse the order of"
                         "the first K elements of the queue, leaving the other elements in the same relative order." << endl;
         cout << "*** COURTESY OF GEEKSFORGEEKS ***";
-        cout << "All good";
     }
 
     void showExamplesModifyQueue(){
@@ -307,8 +306,7 @@ public:
 
     void explainInterleave(){
         cout << endl << "Given a queue of integers of even length, rearrange the elements by interleaving the first half of the queue with the second half of the queue.\n"
-                "\n"
-                "Only a stack can be used as an auxiliary space.";
+                "Only a stack can be used as an auxiliary space." << endl;
     }
 
     void showExamplesInterleave(){
@@ -328,7 +326,38 @@ public:
         cout << "4 --> 2 4 5 6 15 17 19 21" << endl;
     }
 
-    void chooseInterleaveInputs(){};
+    void chooseInterleaveInputs(){
+        queue<int>q1,q2,q3,q4;
+        q1.push(6); q1.push(5); q1.push(4); q1.push(3); q1.push(2); q1.push(1);
+        q2.push(9); q2.push(8); q2.push(3); q2.push(2); q2.push(1); q2.push(6); q2.push(5); q2.push(4);
+        for (int i = 10; i >= 1; --i){
+            q3.push(i);
+        }
+        q4.push(21); q4.push(19); q4.push(17); q4.push(15); q4.push(6); q4.push(5); q4.push(4); q4.push(2);
+
+        while (interleaveRunner == 1) {
+            cout << "Enter your desired input here:";
+            cin >> choice;
+            if (choice == 1) {
+                interLeave(q1);
+            }
+            else if (choice == 2) {
+                interLeave(q2);
+            }
+            else if (choice == 3) {
+                interLeave(q3);
+            }
+            else if (choice == 4) {
+                interLeave(q4);
+            }
+            else{
+                cout << "Please use the correct number mapping!";
+                chooseInterleaveInputs();
+            }
+            cout << endl << "Would you like to run another input? (1 for Yes | 2 for No):";
+            cin >> interleaveRunner;
+        }
+    }
 
 
 
@@ -384,7 +413,22 @@ public:
             }
         }
         else if (choice == 3){
-            cout << endl << "You chose Interleave Queue" << endl;
+            explainInterleave();
+            cout << endl << "Would you like to view examples of this problem? (1 for Yes | 2 for No):";
+            cin >> choice;
+            if (choice == 1){
+                cout << endl;
+                showExamplesInterleave();
+            }
+            cout << endl << "Let's run this algorithm!" << endl;
+            showInterleaveInputs();
+            chooseInterleaveInputs();
+            cout << endl << "Would you like to see the code for this algorithm? (1 for Yes | 2 for No):";
+            cin >> choice;
+            if (choice == 1) {
+                cout << endl;
+                showInterleaveCode();
+            }
         }
         else{
             cout << "--> Please select the correct number mapping!" << endl;
