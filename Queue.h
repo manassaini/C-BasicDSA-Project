@@ -319,6 +319,16 @@ public:
         cout << "Output: 11 16 12 17 13 18 14 19 15 20" << endl;
     }
 
+    void showInterleaveInputs(){
+        cout << "Choose your desired input for Interleave Queue" << endl;
+        cout << "1 --> 1 2 3 4 5 6" << endl;
+        cout << "2 --> 4 5 6 1 2 3 8 9" << endl;
+        cout << "3 --> 1 2 3 4 5 6 7 8 9 10" << endl;
+        cout << "4 --> 2 4 5 6 15 17 19 21" << endl;
+    }
+
+    void chooseInterleaveInputs(){};
+
 
 
 
