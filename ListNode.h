@@ -248,15 +248,19 @@ public:
 
     Node* findSpecificNode(Node* node, int value){
         while (node != NULL){
-            if (node->data == value) return node;
+            if (node->data == value) {
+                cout << "Node found!" << endl;
+                return node;
+            }
             node = node->next;
         }
-        return NULL;
+        cout << "Node not found!" << endl;
     }
 
     void explainFindSpecificNode(){
         cout << "This program checks to see if a specific node is in a linked list or not. Takes in a linked list and value as parameters." << endl;
         cout << "The value is the node->data you are looking for." << endl;
+        cout << "If the node is found, return it. If not, return ""Node not found!""" << endl;
     }
 
     void showFindSpecificNodeCode(){
@@ -269,6 +273,56 @@ public:
         cout << "}" << endl;
     }
 
+    void showFindNodeInputs(){
+        cout << "Choose your desired input" << endl;
+        cout << "1 --> 0->1->2->-3->4->5->6->7->8->9, 5" << endl;
+        cout << "2 --> 0->1->2->3->4->, 4" << endl;
+        cout << "3 --> 0->1->2->3->4->5->6->7, 20" << endl;
+    }
+
+    int chooseFindNodeInputs(){
+        Node* head1 = NULL;
+        Node* head2 = NULL;
+        Node* head3 = NULL;
+        head1 = createLinkedList(10);
+        head2 = createLinkedList(5);
+        head3 = createLinkedList(8);
+
+        while (findRunner == 1){
+            cout << "Enter your desired input here:";
+            cin >> choice;
+            if (choice == 1){
+                cout << endl;
+                cout << "Here is your original list" << endl;
+                printList(head1);
+                cout << endl;
+                head1 = findSpecificNode(head1, 5);
+                cout << head1->data;
+            }
+            else if (choice == 2){
+                cout << endl;
+                cout << "Here is your original list" << endl;
+                printList(head2);
+                cout << endl;
+                head2 = findSpecificNode(head2, 4);
+                cout << head2->data;
+            }
+            else if (choice == 3){
+                cout << endl;
+                cout << "Here is your original list" << endl;
+                printList(head3);
+                cout << endl;
+                head3 = findSpecificNode(head3, 8);
+                cout << head3->data;
+            }
+            else{
+                cout << "Please use the correct number mapping!";
+                chooseFindNodeInputs();
+            }
+            cout << endl << "Would you like to run another input? (1 for Yes | 2 for No):";
+            cin >> findRunner;
+        }
+    }
 
 
 
@@ -469,7 +523,16 @@ public:
             }
         }
         else if (choice == 3){
-            cout << endl << "You chose Find Specific Node" << endl;
+            explainFindSpecificNode();
+            cout << endl << "Let's run this algorithm!" << endl;
+            showFindNodeInputs();
+            chooseFindNodeInputs();
+            cout << endl << "Would you like to see the code for this algorithm? (1 for Yes | 2 for No):";
+            cin >> choice;
+            if (choice == 1) {
+                cout << endl;
+                showFindSpecificNodeCode();
+            }
         }
         else if (choice == 4){
             cout << endl << "You chose Delete Specific Node" << endl;
