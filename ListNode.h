@@ -382,6 +382,57 @@ public:
         cout << "Explanation: The node at position 2 is deleted." << endl;
     }
 
+    void showDeleteNodeInputs(){
+        cout << "Choose your desired input" << endl;
+        cout << "1 --> 0->1->2->-3->4->5->6->7->8->9, 5" << endl;
+        cout << "2 --> 0->1->2->3->4->, 4" << endl;
+        cout << "3 --> 0->1->2->3->4->5->6->7, 2" << endl;
+    }
+
+    int chooseDeleteNodeInputs() {
+        Node *head1 = NULL;
+        Node *head2 = NULL;
+        Node *head3 = NULL;
+        head1 = createLinkedList(10);
+        head2 = createLinkedList(5);
+        head3 = createLinkedList(8);
+
+        while (deleteRunner == 1) {
+            cout << "Enter your desired input here:";
+            cin >> choice;
+            if (choice == 1) {
+                cout << endl;
+                cout << "Here is your original list" << endl;
+                printList(head1);
+                cout << endl;
+                head1 = deleteNode(head1, 5);
+                cout << "New list" << endl;
+                printList(head1);
+            } else if (choice == 2) {
+                cout << endl;
+                cout << "Here is your original list" << endl;
+                printList(head2);
+                cout << endl;
+                head2 = deleteNode(head2, 4);
+                cout << "New list" << endl;
+                printList(head2);
+            } else if (choice == 3) {
+                cout << endl;
+                cout << "Here is your original list" << endl;
+                printList(head3);
+                cout << endl;
+                head3 = deleteNode(head3, 2);
+                cout << "New list" << endl;
+                printList(head3);
+            } else {
+                cout << "Please use the correct number mapping!";
+                chooseDeleteNodeInputs();
+            }
+            cout << endl << "Would you like to run another input? (1 for Yes | 2 for No):";
+            cin >> deleteRunner;
+        }
+    }
+
 
 
 
@@ -535,7 +586,16 @@ public:
             }
         }
         else if (choice == 4){
-            cout << endl << "You chose Delete Specific Node" << endl;
+            explainDeleteNode();
+            cout << endl << "Let's run this algorithm!" << endl;
+            showDeleteNodeInputs();
+            chooseDeleteNodeInputs();
+            cout << endl << "Would you like to see the code for this algorithm? (1 for Yes | 2 for No):";
+            cin >> choice;
+            if (choice == 1) {
+                cout << endl;
+                showDeleteNodeCode();
+            }
         }
         else if (choice == 5){
             cout << endl << "You chose Get Middle of List" << endl;
@@ -558,4 +618,5 @@ public:
         int middleRunner = 1;
         int duplicateRunner = 1;
     }
+
 };
