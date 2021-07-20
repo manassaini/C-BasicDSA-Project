@@ -546,17 +546,92 @@ public:
     }
 
     void explainRemoveDuplicates(){
-        cout << "Given an unsorted linked list of N nodes. The task is to remove duplicate elements from this unsorted Linked List. When a value appears in multiple nodes, the node which appeared first should be kept, all others duplicates are to be removed." << endl;
+        cout << endl << "Given an unsorted linked list of N nodes. The task is to remove duplicate elements from this unsorted Linked List. When a value appears in multiple nodes, the node which appeared first should be kept, all others duplicates are to be removed." << endl;
         cout << "*** COURTESY OF GEEKSFORGEEKS ***" << endl;
     }
 
     void showExamplesRemoveDuplicates(){
         cout << "Example 1: " << endl;
         cout << "Input: 5->2->2->4" << endl;
-        cout << "Output: 5->2->4" << endl;
+        cout << "Output: 5->2->4" << endl << endl;
         cout << "Example 2: " << endl;
         cout << "Input: 2->2->2->2->" << endl;
         cout << "Output: 2" << endl;
+    }
+
+    void showRemoveDuplicatesInputs(){
+        cout << "Choose your desired input" << endl;
+        cout << "1 --> 1->2->3->3->4->5->5->6" << endl;
+        cout << "2 --> 5->5->5->5->5" << endl;
+        cout << "3 --> 0->1->1->2" << endl;
+    }
+
+    void chooseRemoveDuplicatesInputs(){
+        Node* head1 = new Node();
+        Node* second1 = new Node();
+        Node* third1 = new Node();
+        Node* fourth1 = new Node();
+        Node* fifth1 = new Node();
+        Node* sixth1 = new Node();
+        Node* seventh1 = new Node();
+        Node* eigth1 = new Node();
+        head1->data = 1; head1->next = second1;
+        second1->data = 2; second1->next = third1;
+        third1->data = 3; third1->next = fourth1;
+        fourth1->data = 3; fourth1->next = fifth1;
+        fifth1->data = 4; fifth1->next = sixth1;
+        sixth1->data = 5; sixth1->next = seventh1;
+        seventh1->data = 5; seventh1->next = eigth1;
+        eigth1->data = 6; eigth1->next = NULL;
+
+        Node* head2 = new Node();
+        Node* second2 = new Node();
+        Node* third2 = new Node();
+        Node* fourth2 = new Node();
+        Node* fifth2 = new Node();
+        head2->data = 5; head2->next = second2;
+        second2->data = 5; second2->next = third2;
+        third2->data = 5; third2->next = fourth2;
+        fourth2->data = 5; fourth2->next = fifth2;
+        fifth2->data = 5; fifth2->next = NULL;
+
+        Node* head3 = new Node();
+        Node* second3 = new Node();
+        Node* third3 = new Node();
+        Node* fourth3 = new Node();
+        head3->data = 0; head3->next = second3;
+        second3->data = 1; second3->next = third3;
+        third3->data = 1; third3->next = fourth3;
+        fourth3->data = 2; fourth3->next = NULL;
+
+        while (duplicateRunner == 1) {
+            cout << "Enter your desired input here:";
+            cin >> choice;
+            if (choice == 1) {
+                cout << endl;
+                cout << "Here is your original list" << endl;
+                printList(head1);
+                cout << endl << "New list " << endl;
+                removeDuplicates(head1);
+            } else if (choice == 2) {
+                cout << endl;
+                cout << "Here is your original list" << endl;
+                printList(head2);
+                cout << endl << "New list " << endl;
+                removeDuplicates(head2);
+            } else if (choice == 3) {
+                cout << endl;
+                cout << "Here is your original list" << endl;
+                printList(head3);
+                cout << endl << "New list " << endl;
+                removeDuplicates(head3);
+            } else {
+                cout << "Please use the correct number mapping!";
+                chooseRemoveDuplicatesInputs();
+            }
+            cout << endl << "Would you like to run another input? (1 for Yes | 2 for No):";
+            cin >> duplicateRunner;
+        }
     }
 
 
@@ -655,7 +730,22 @@ public:
             }
         }
         else if (choice == 6){
-            cout << endl << "You chose Remove Duplicates" << endl;
+            explainRemoveDuplicates();
+            cout << endl << "Would you like to view examples of this problem? (1 for Yes | 2 for No):";
+            cin >> choice;
+            if (choice == 1){
+                cout << endl;
+                showExamplesRemoveDuplicates();
+            }
+            cout << endl << "Let's run this algorithm!" << endl;
+            showRemoveDuplicatesInputs();
+            chooseRemoveDuplicatesInputs();
+            cout << endl << "Would you like to see the code for this algorithm? (1 for Yes | 2 for No):";
+            cin >> choice;
+            if (choice == 1) {
+                cout << endl;
+                showRemoveDuplicatesCode();
+            }
         }
         else{
             cout << "--> Please select the correct number mapping!" << endl;
