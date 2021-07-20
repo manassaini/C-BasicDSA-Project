@@ -194,7 +194,7 @@ public:
     }
 
     void explainAddNodeToFront(){
-        cout << "This simple program adds a Node to the front of an already existing linked list. The data for the new node is asked within the program." << endl;
+        cout << endl << "This simple program adds a Node to the front of an already existing linked list. The data for the new node is asked within the program." << endl;
     }
 
     int chooseAddToFrontInputs(){
@@ -258,7 +258,7 @@ public:
     }
 
     void explainFindSpecificNode(){
-        cout << "This program checks to see if a specific node is in a linked list or not. Takes in a linked list and value as parameters." << endl;
+        cout << endl << "This program checks to see if a specific node is in a linked list or not. Takes in a linked list and value as parameters." << endl;
         cout << "The value is the node->data you are looking for." << endl;
         cout << "If the node is found, return it. If not, return ""Node not found!""" << endl;
     }
@@ -371,7 +371,7 @@ public:
     }
 
     void explainDeleteNode(){
-        cout << "Given the head of a linked list and an integer holding the position of the node you wish to be deleted, the task is to delete that node" << endl;
+        cout << endl << "Given the head of a linked list and an integer holding the position of the node you wish to be deleted, the task is to delete that node" << endl;
         cout << "*** COURTESY OF GEEKSFORGEEKS ***" << endl;
     }
 
@@ -448,7 +448,7 @@ public:
     }
 
     void explainGetMiddel(){
-        cout << "Given a singly linked list of N nodes. The task is to find the middle of the linked list. For example, if given linked list is 1->2->3->4->5 then the output should be 3.\n"
+        cout << endl << "Given a singly linked list of N nodes. The task is to find the middle of the linked list. For example, if given linked list is 1->2->3->4->5 then the output should be 3.\n"
                 "If there are even nodes, then there would be two middle nodes, we need to print the second middle element. For example, if given linked list is 1->2->3->4->5->6 then the output should be 4." << endl;
         cout << "*** COURTESY OF GEEKSFORGEEKS ***" << endl;
     }
@@ -456,7 +456,7 @@ public:
     void showExamplesGetMiddle(){
         cout << "Example 1: " << endl;
         cout << "Input: LinkedList: 1->2->3->4->5" << endl;
-        cout << "Output: 3" << endl;
+        cout << "Output: 3" << endl << endl;
         cout << "Example 2: " << endl;
         cout << "Input: LinkedList: 2->4->6->7->5->1" << endl;
         cout << "Output: 7" << endl;
@@ -474,7 +474,40 @@ public:
         cout << "}" << endl;
     }
 
+    void chooseGetMiddleInputs(){
+        Node *head1 = NULL;
+        Node *head2 = NULL;
+        Node *head3 = NULL;
+        head1 = createLinkedList(10);
+        head2 = createLinkedList(5);
+        head3 = createLinkedList(8);
 
+        while (middleRunner == 1) {
+            cout << "Enter your desired input here:";
+            cin >> choice;
+            if (choice == 1) {
+                cout << endl;
+                cout << "Here is your original list" << endl;
+                printList(head1);
+                cout << endl << "Middle: " << getMiddle(head1);
+            } else if (choice == 2) {
+                cout << endl;
+                cout << "Here is your original list" << endl;
+                printList(head2);
+                cout << endl << "Middle: " << getMiddle(head2);
+            } else if (choice == 3) {
+                cout << endl;
+                cout << "Here is your original list" << endl;
+                printList(head3);
+                cout << endl << "Middle: " << getMiddle(head3);
+            } else {
+                cout << "Please use the correct number mapping!";
+                chooseGetMiddleInputs();
+            }
+            cout << endl << "Would you like to run another input? (1 for Yes | 2 for No):";
+            cin >> middleRunner;
+        }
+    }
 
 
 
@@ -587,6 +620,12 @@ public:
         }
         else if (choice == 4){
             explainDeleteNode();
+            cout << endl << "Would you like to view examples of this problem? (1 for Yes | 2 for No):";
+            cin >> choice;
+            if (choice == 1){
+                cout << endl;
+                showExamplesDeleteNode();
+            }
             cout << endl << "Let's run this algorithm!" << endl;
             showDeleteNodeInputs();
             chooseDeleteNodeInputs();
@@ -598,7 +637,22 @@ public:
             }
         }
         else if (choice == 5){
-            cout << endl << "You chose Get Middle of List" << endl;
+            explainGetMiddel();
+            cout << endl << "Would you like to view examples of this problem? (1 for Yes | 2 for No):";
+            cin >> choice;
+            if (choice == 1){
+                cout << endl;
+                showExamplesGetMiddle();
+            }
+            cout << endl << "Let's run this algorithm!" << endl;
+            showExamplesForMost();
+            chooseGetMiddleInputs();
+            cout << endl << "Would you like to see the code for this algorithm? (1 for Yes | 2 for No):";
+            cin >> choice;
+            if (choice == 1) {
+                cout << endl;
+                showGetMiddleCode();
+            }
         }
         else if (choice == 6){
             cout << endl << "You chose Remove Duplicates" << endl;
