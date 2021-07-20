@@ -450,7 +450,7 @@ public:
                 cout << "Please use the correct number mapping!";
                 chooseBalancedInput();
             }
-            cout << endl << "Would you like to run another algorithm? (1 for Yes | 2 for No):";
+            cout << endl << "Would you like to run another input? (1 for Yes | 2 for No):";
             cin >> greaterRunner;
         }
     }

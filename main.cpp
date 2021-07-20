@@ -80,6 +80,18 @@ int main() {
         else if (choiceDS == 3){
             mainRunner = 1;
             list.chooseListAlgo();
+            list.selectListAlgo();
+            cout << endl << "Would you like to work with another DS? (1 for Yes | 2 for No):";
+            cin >> mainRunner;
+            if (mainRunner == 1){
+                list.resetVariables();
+                cout << endl;
+                program.chooseDS();
+            }
+            else {
+                cout << "Goodbye! fix this later blah" << endl;
+            }
+
             //choiceAlgo = list.selectListAlgo();
         }
         else if (choiceDS == 4){
