@@ -38,6 +38,7 @@ int main() {
     Queue queue;
     Node list;
     TreeNode tree(0);
+    tree.drawBST();
 
     int mainRunner = 1;
     program.IntroMessage();
