@@ -97,7 +97,17 @@ int main() {
         else if (choiceDS == 4){
             mainRunner = 1;
             tree.chooseTreeAlgo();
-            //choiceAlgo = tree.selectTreeAlgo();
+            tree.selectTreeAlgo();
+            cout << endl << "Would you like to work with another DS? (1 for Yes | 2 for No):";
+            cin >> mainRunner;
+            if (mainRunner == 1){
+                tree.resetVariables();
+                cout << endl;
+                program.chooseDS();
+            }
+            else {
+                cout << "Goodbye! fix this later blah" << endl;
+            }
 
         }
     }

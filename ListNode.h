@@ -635,15 +635,6 @@ public:
     }
 
 
-
-
-
-
-
-
-
-
-
     void chooseListAlgo(){
         cout << "Which algorithm that uses a linked list would you like to see?" << endl;
         cout << "1 --> Add Node to Front" << endl;

@@ -12,6 +12,11 @@ class TreeNode{
 public:
 
     int choice;
+    int orderRunner = 1;
+    int searchRunner = 1;
+    int insertRunner = 1;
+    int sameRunner = 1;
+    int sumRunner = 1;
 
     int data;
     TreeNode* left;
@@ -44,14 +49,16 @@ public:
     }
 
     TreeNode* createTreeManual2(){
-        TreeNode* root = new TreeNode(1);
-        root->left = new TreeNode(2);
-        root->right = new TreeNode(3);
-        root->left->left = new TreeNode(4);
-        root->left->right = new TreeNode(5);
-        root->right->left = new TreeNode(6);
-        root->right->right = new TreeNode(8);
-        root->right->right->right = new TreeNode(9);
+        TreeNode* root = new TreeNode(2);
+        root->left = new TreeNode(4);
+        root->right = new TreeNode(8);
+        root->left->left = new TreeNode(1);
+        root->left->right = new TreeNode(3);
+        root->right->left = new TreeNode(10);
+        root->right->right = new TreeNode(6);
+        root->right->right->right = new TreeNode(7);
+        root->left->right->left = new TreeNode(9);
+        root->right->left->right = new TreeNode(5);
         return root;
     }
 
@@ -91,6 +98,7 @@ public:
         cout << "    preOrder(root->right);" << endl;
         cout << "}" << endl;
     }
+
 
     void inOrder(TreeNode* root){
         if (root == NULL){
@@ -133,6 +141,78 @@ public:
         cout << "}" << endl;
     }
 
+    void explainPreInPost(){
+        cout << endl << "This algorithm is able to traverse a binary tree in pre, in, post order traversal" << endl;
+        cout << "Knowledge of these algorithms is already expected" << endl;
+    }
+
+    void drawTree1(){
+        cout << "Tree 1:" << endl;
+        cout << "         1" << endl;
+        cout << "      /     \\" << endl;
+        cout << "     2       3" << endl;
+        cout << "   /  \\     /  \\" << endl;
+        cout << "  4    5   6    7" << endl;
+    }
+
+    void drawTree2(){
+        cout << "Tree 2:" << endl;
+        cout << "         2" << endl;
+        cout << "      /     \\" << endl;
+        cout << "     4       8" << endl;
+        cout << "   /  \\     /  \\" << endl;
+        cout << "  1    3   10    6" << endl;
+        cout << "     /       \\    \\" << endl;
+        cout << "    9         5    7" << endl;
+    }
+
+    int selectTree() {
+        int treeChoice;
+        cout << "First let's select which tree you want to work with!" << endl;
+        drawTree1();
+        cout << endl;
+        drawTree2();
+        cout << "Enter your choice here:";
+        cin >> treeChoice;
+        return treeChoice;
+    }
+
+    int selectOrder(){
+        int orderChoice;
+        cout << "Not let's select an order algorithm" << endl;
+        cout << "1 --> Pre Order" << endl;
+        cout << "2 --> In Order" << endl;
+        cout << "3 --> Post Order" << endl;
+        cout << "Enter your choice here:";
+        cin >> orderChoice;
+        return orderChoice;
+    }
+
+    void chooseOrderInputs(){
+        TreeNode* root1 = createTreeManual();
+        TreeNode* root2 = createTreeManual2();
+
+        if (selectTree() == 1){  //first selectTree()
+            if (selectOrder() == 1) preOrder(root1);
+            else if (selectOrder() == 2) inOrder(root1);
+            else postOrder(root1);
+        }
+        else if (selectTree() == 2){  //second selectTree()
+            if (selectOrder() == 1) preOrder(root2);
+            else if (selectOrder() == 2) inOrder(root2);
+            else postOrder(root2);
+        }
+        else{
+            cout << "Please use the correct number mapping!";
+            selectTree();
+            selectOrder();
+        }
+
+    }
+
+
+
+
     void searchBST(int val, TreeNode* root){
         if (root->data == val){
             cout << val << " is found!";
@@ -163,6 +243,9 @@ public:
         cout << "This program searches for a node in a binary search tree." << endl;
         cout << "The function is given two parameters, the root of the BST tree and an integer value of the node you are looking for." << endl;
     }
+
+
+
 
     TreeNode* insertDataBST(int val, TreeNode* root){
         if (root == NULL){
@@ -217,6 +300,10 @@ public:
         cout << "             7" << endl;
 
     }
+
+
+
+
 
     bool isSameTree(TreeNode* root1, TreeNode* root2){
         if (root1 == NULL && root2 == NULL) {
@@ -276,6 +363,10 @@ public:
 
     }
 
+
+
+
+
     int sumNodes(TreeNode* root) {
         if (root == NULL){
             return 0;
@@ -312,6 +403,11 @@ public:
         cout << "Explanation: 1 + 2 + 3 + 4 + 5 + 6 + 7 = 28" << endl;
     }
 
+
+
+
+
+
     void chooseTreeAlgo(){
         cout << "Which algorithm that uses a tree would you like to see?" << endl;
         cout << "1 --> Pre/In/Post Order Traversal" << endl;
@@ -325,7 +421,22 @@ public:
         cout << "Type a number to select: ";
         cin >> choice;
         if (choice == 1){
-            cout << endl << "You chose Pre/In/Post Order Traversal" << endl;
+            explainPreInPost();
+            cout << endl << "Let's run this algorithm!" << endl;
+            chooseOrderInputs();
+            cout << endl << "Would you like to see the code for this algorithm? (1 for Yes | 2 for No):";
+            cin >> choice;
+            if (choice == 1) {
+                cout << "Which algorithm?" << endl;
+                cout << "1 --> Pre" << endl;
+                cout << "2 --> In" << endl;
+                cout << "3 --> Post" << endl;
+                cout << "Enter choice here:";
+                cin >> choice;
+                if (choice == 1) showPreOrderCode();
+                else if (choice == 2) showInOrderCode();
+                else showPostOrderCode();
+            }
         }
         else if (choice == 2){
             cout << endl << "You chose Search in Binary Search Tree" << endl;
@@ -344,5 +455,13 @@ public:
             selectTreeAlgo();
         }
         return choice;
+    }
+
+    void resetVariables(){
+        int orderRunner = 1;
+        int searchRunner = 1;
+        int insertRunner = 1;
+        int sameRunner = 1;
+        int sumRunner = 1;
     }
 };
