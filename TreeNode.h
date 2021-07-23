@@ -223,6 +223,7 @@ public:
         else if (val > root->data){
             searchBST(val, root->right);
         }
+
     }
 
     void showSearchBSTCode(){
@@ -257,22 +258,22 @@ public:
     void showSearchBSTInputs(){
         cout << "Here is your given binary search tree" << endl;
         drawBST();
-        cout << endl << "Which node would you like to insert?" << endl;
-        cout << "1 --> 11" << endl;
-        cout << "2 --> 0" << endl;
-        cout << "3 --> 2" << endl;
+        cout << endl << "Which node would you like to search for?" << endl;
     }
 
     int chooseSearchBSTInputs(){
         TreeNode* root = createBSTManual();
         while (searchRunner == 1){
-            cout << "Enter your desired input here:";
+            cout << "Enter an integer value here:";
             cin >> choice;
-            if (choice == 1){
-                cout << endl;
-                searchBST(11, root);
-
+            if (choice != 8 && choice != 3 && choice != 10 && choice != 1 && choice != 6 && choice != 14 && choice != 4 && choice != 7 && choice != 13){
+                cout << choice << " is not found!";
             }
+            else{
+                searchBST(choice, root);
+            }
+            cout << endl << "Would you like to run another input? (1 for Yes | 2 for No):";
+            cin >> searchRunner;
         }
     }
 
@@ -516,7 +517,16 @@ public:
             }
         }
         else if (choice == 2){
-            cout << endl << "You chose Search in Binary Search Tree" << endl;
+            explainSearchBST();
+            cout << endl << "Let's run this algorithm!" << endl;
+            showSearchBSTInputs();
+            chooseSearchBSTInputs();
+            cout << endl << "Would you like to see the code for this algorithm? (1 for Yes | 2 for No):";
+            cin >> choice;
+            if (choice == 1) {
+                cout << endl;
+                showSearchBSTCode();
+            }
         }
         else if (choice == 3){
             explainInsertDataBST();
