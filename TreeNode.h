@@ -127,6 +127,14 @@ public:
         cout << "  4    5   6    7" << endl;
     }
 
+    void drawTree1Samee(){
+        cout << "         1" << endl;
+        cout << "      /     \\" << endl;
+        cout << "     2       3" << endl;
+        cout << "   /  \\     /  \\" << endl;
+        cout << "  4    5   6    7" << endl;
+    }
+
     void drawTree2(){
         cout << "Tree 2:" << endl;
         cout << "         2" << endl;
@@ -544,17 +552,17 @@ public:
             cin >> choice;
             if (choice == 1){
                 cout << endl;
-                isSameTree(root, root1);
+                cout << isSameTree(root, root1) << endl;
                 cout << "Trees are the same!" << endl;
             }
             else if (choice == 2){
                 cout << endl;
-                isSameTree(root2, root3);
+                cout << isSameTree(root2, root3) << endl;
                 cout << "Trees are not the same!" << endl;
             }
             else if (choice == 3){
                 cout << endl;
-                isSameTree(root4, root5);
+                cout << isSameTree(root4, root5) << endl;
                 cout << "Trees are not the same!" << endl;
             }
             else{
@@ -588,7 +596,7 @@ public:
     }
 
     void explainSumNodes(){
-        cout << "Given the root of the binary tree as input, the task is to return the sum of all the nodes in the tree." << endl;
+        cout << endl << "Given the root of the binary tree as input, the task is to return the sum of all the nodes in the tree." << endl;
     }
 
     void showExamplesSumNodes(){
@@ -604,10 +612,42 @@ public:
     }
 
     void showSumNodesInputs(){
-
+        cout << "Select an input" << endl;
+        cout << "Input 1:" << endl;
+        drawBST();
+        cout << endl << "Input 2:" << endl;
+        drawTree1Samee();
+        cout << endl << "Input 3:" << endl;
+        drawTree4();
     }
 
     void chooseSumNodesInputs(){
+        TreeNode* root = createBSTManual();
+        TreeNode* root1 = createTreeManual();
+        TreeNode* root2 = simpleTree();
+
+        while (sumRunner == 1){
+            cout << "Enter your desired input here:";
+            cin >> choice;
+            if (choice == 1){
+                cout << endl;
+                cout << sumNodes(root);
+            }
+            else if (choice == 2){
+                cout << endl;
+                cout << sumNodes(root1);
+            }
+            else if (choice == 3){
+                cout << endl;
+                cout << sumNodes(root2);
+            }
+            else{
+                cout << "Please use the correct number mapping!";
+                chooseSumNodesInputs();
+            }
+            cout << endl << "Would you like to run another input? (1 for Yes | 2 for No):";
+            cin >> sumRunner;
+        }
 
     }
 
@@ -696,7 +736,22 @@ public:
             }
         }
         else if (choice == 5){
-            cout << endl << "You chose Sum Nodes of Tree" << endl;
+            explainSumNodes();
+            cout << endl << "Would you like to view examples of this problem? (1 for Yes | 2 for No):";
+            cin >> choice;
+            if (choice == 1){
+                cout << endl;
+                showExamplesSumNodes();
+            }
+            cout << endl << "Let's run this algorithm!" << endl;
+            showSumNodesInputs();
+            chooseSumNodesInputs();
+            cout << endl << "Would you like to see the code for this algorithm? (1 for Yes | 2 for No):";
+            cin >> choice;
+            if (choice == 1) {
+                cout << endl;
+                showSumNodesCode();
+            }
         }
         else{
             cout << "--> Please select the correct number mapping!" << endl;

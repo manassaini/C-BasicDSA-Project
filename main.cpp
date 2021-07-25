@@ -59,7 +59,7 @@ int main() {
                 program.chooseDS();
             }
             else {
-                cout << "Goodbye! fix this later blah" << endl;
+                cout << "Goodbye! " << endl;
             }
         }
         else if (choiceDS == 2){
@@ -74,7 +74,7 @@ int main() {
                 program.chooseDS();
             }
             else {
-                cout << "Goodbye! fix this later blah" << endl;
+                cout << "Goodbye! " << endl;
             }
         }
         else if (choiceDS == 3){
@@ -89,7 +89,7 @@ int main() {
                 program.chooseDS();
             }
             else {
-                cout << "Goodbye! fix this later blah" << endl;
+                cout << "Goodbye! " << endl;
             }
 
             //choiceAlgo = list.selectListAlgo();
@@ -106,7 +106,7 @@ int main() {
                 program.chooseDS();
             }
             else {
-                cout << "Goodbye! fix this later blah" << endl;
+                cout << "Goodbye! " << endl;
             }
 
         }

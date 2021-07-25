@@ -14,7 +14,7 @@ public:
     void IntroMessage(){
         cout << "Welcome to my C++ Data Structures project!" << endl;
         cout << "This project showcases 5 data structures and some basic algorithms for each one." << endl;
-        cout << "The 5 data structures I focused on were Stacks, Queues, Linked Lists, Trees, and HashMaps." << endl;
+        cout << "The 5 data structures I focused on were Stacks, Queues, Linked Lists, and Trees." << endl;
         cout << "Below explains the UI and how you can correctly run the program." << endl << endl;
         cout << "1. The program will first ask you which data structure you would like to work with." << endl;
         cout << "2. Then, you will be asked which specific algorithm you would like to see for that data structure." << endl;
@@ -31,7 +31,6 @@ public:
         cout << "2 --> Queue" << endl;
         cout << "3 --> Linked List" << endl;
         cout << "4 --> Tree" << endl;
-        cout << "5 --> HashMap" << endl;
     }
 
     int selectDS(){
