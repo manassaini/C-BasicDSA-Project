@@ -79,6 +79,99 @@ public:
         return root;
     }
 
+    TreeNode* createBSTManual2(){
+        TreeNode* root = new TreeNode(8);             //level 1
+
+        root->left = new TreeNode(3);             //level 2
+        root->right = new TreeNode(10);
+
+        root->left->left = new TreeNode(1);       //level 3
+        root->left->right = new TreeNode(6);
+        root->right->right = new TreeNode(14);
+
+        root->left->right->left = new TreeNode(4); //level 4
+        root->left->right->right = new TreeNode(7);
+        root->right->right->left = new TreeNode(13);
+
+        root->left->right->left->left = new TreeNode(10);
+
+        return root;
+    }
+
+    TreeNode* simpleTree(){
+        TreeNode* root = new TreeNode(1);
+        root->left = new TreeNode(2);
+        root->right = new TreeNode(3);
+    }
+
+    TreeNode* simpleTree2(){
+        TreeNode* root = new TreeNode(1);
+        root->left = new TreeNode(2);
+    }
+
+    void drawTree1(){
+        cout << "Tree 1:" << endl;
+        cout << "         1" << endl;
+        cout << "      /     \\" << endl;
+        cout << "     2       3" << endl;
+        cout << "   /  \\     /  \\" << endl;
+        cout << "  4    5   6    7" << endl;
+    }
+
+    void drawTree1Same(){
+        cout << "Tree 2:" << endl;
+        cout << "         1" << endl;
+        cout << "      /     \\" << endl;
+        cout << "     2       3" << endl;
+        cout << "   /  \\     /  \\" << endl;
+        cout << "  4    5   6    7" << endl;
+    }
+
+    void drawTree2(){
+        cout << "Tree 2:" << endl;
+        cout << "         2" << endl;
+        cout << "      /     \\" << endl;
+        cout << "     4       8" << endl;
+        cout << "   /  \\     /  \\" << endl;
+        cout << "  1    3   10    6" << endl;
+        cout << "     /       \\    \\" << endl;
+        cout << "    9         5    7" << endl;
+    }
+
+    void drawTree3(){
+        cout << "         8" << endl;
+        cout << "      /     \\" << endl;
+        cout << "     3       10" << endl;
+        cout << "   /  \\        \\" << endl;
+        cout << "  1    6         14" << endl;
+        cout << "     /   \\     /    " << endl;
+        cout << "    4     7   13     " << endl;
+        cout << "  /" << endl;
+        cout << " 10" << endl;
+    }
+
+    void drawTree4(){
+        cout << "         1" << endl;
+        cout << "      /     \\" << endl;
+        cout << "     2       3" << endl;
+    }
+
+    void drawTree5(){
+        cout << "         1" << endl;
+        cout << "      /     " << endl;
+        cout << "     2       " << endl;
+    }
+
+    void drawBST(){
+        cout << "         8" << endl;
+        cout << "      /     \\" << endl;
+        cout << "     3       10" << endl;
+        cout << "   /  \\        \\" << endl;
+        cout << "  1    6         14" << endl;
+        cout << "     /   \\     /    " << endl;
+        cout << "    4     7   13     " << endl;
+    }
+
     void preOrder(TreeNode* root){
         if (root == NULL){
             return;
@@ -146,25 +239,6 @@ public:
         cout << "Knowledge of these algorithms is already expected" << endl;
     }
 
-    void drawTree1(){
-        cout << "Tree 1:" << endl;
-        cout << "         1" << endl;
-        cout << "      /     \\" << endl;
-        cout << "     2       3" << endl;
-        cout << "   /  \\     /  \\" << endl;
-        cout << "  4    5   6    7" << endl;
-    }
-
-    void drawTree2(){
-        cout << "Tree 2:" << endl;
-        cout << "         2" << endl;
-        cout << "      /     \\" << endl;
-        cout << "     4       8" << endl;
-        cout << "   /  \\     /  \\" << endl;
-        cout << "  1    3   10    6" << endl;
-        cout << "     /       \\    \\" << endl;
-        cout << "    9         5    7" << endl;
-    }
 
     int selectTree() {
         int treeChoice;
@@ -243,16 +317,6 @@ public:
     void explainSearchBST(){
         cout << endl << "This program searches for a node in a binary search tree." << endl;
         cout << "The function is given two parameters, the root of the BST tree and an integer value of the node you are looking for." << endl;
-    }
-
-    void drawBST(){
-        cout << "         8" << endl;
-        cout << "      /     \\" << endl;
-        cout << "     3       10" << endl;
-        cout << "   /  \\        \\" << endl;
-        cout << "  1    6         14" << endl;
-        cout << "     /   \\     /    " << endl;
-        cout << "    4     7   13     " << endl;
     }
 
     void showSearchBSTInputs(){
@@ -416,8 +480,7 @@ public:
     }
 
     void explainIsSameTree(){
-        cout << "Given the roots of two binary trees p and q, write a function to check if they are the same or not.\n"
-                "\n"
+        cout << endl << "Given the roots of two binary trees p and q, write a function to check if they are the same or not.\n"
                 "Two binary trees are considered the same if they are structurally identical, and the nodes have the same value." << endl;
         cout << "*** COURTESY OF LEETCODE ***" << endl;
     }
@@ -443,6 +506,65 @@ public:
 
 
 
+
+
+    void showSameTreeInputs(){
+        cout << "Here are some inputs, which one do you want?" << endl;
+        cout << "Input 1:" << endl;
+        drawTree1();
+        drawTree1Same();
+        cout << endl << "----------------------------------------" << endl;
+
+        cout << "Input 2:" << endl;
+        cout << "Tree 1:" << endl;
+        drawTree3();
+        cout << "Tree 2:" << endl;
+        drawBST();
+        cout << endl << "----------------------------------------" << endl;
+
+        cout << "Input 3:" << endl;
+        cout << "Tree 1:" << endl;
+        drawTree4();
+        cout << "Tree 2:" << endl;
+        drawTree5();
+    }
+
+    void chooseSameTreeInputs(){
+        TreeNode* root = createTreeManual();
+        TreeNode* root1 = createTreeManual();
+
+        TreeNode* root2 = createBSTManual();
+        TreeNode* root3 = createBSTManual2();
+
+        TreeNode* root4 = simpleTree();
+        TreeNode* root5 = simpleTree2();
+
+        while (sameRunner == 1){
+            cout << "Enter your desired input here:";
+            cin >> choice;
+            if (choice == 1){
+                cout << endl;
+                isSameTree(root, root1);
+                cout << "Trees are the same!" << endl;
+            }
+            else if (choice == 2){
+                cout << endl;
+                isSameTree(root2, root3);
+                cout << "Trees are not the same!" << endl;
+            }
+            else if (choice == 3){
+                cout << endl;
+                isSameTree(root4, root5);
+                cout << "Trees are not the same!" << endl;
+            }
+            else{
+                cout << "Please use the correct number mapping!";
+                chooseInsertBSTInputs();
+            }
+            cout << endl << "Would you like to run another input? (1 for Yes | 2 for No):";
+            cin >> sameRunner;
+        }
+    }
 
 
     int sumNodes(TreeNode* root) {
@@ -479,6 +601,14 @@ public:
         cout << "  4    5   6    7" << endl;
         cout << "Output: 28" << endl;
         cout << "Explanation: 1 + 2 + 3 + 4 + 5 + 6 + 7 = 28" << endl;
+    }
+
+    void showSumNodesInputs(){
+
+    }
+
+    void chooseSumNodesInputs(){
+
     }
 
 
@@ -548,7 +678,22 @@ public:
 
         }
         else if (choice == 4){
-            cout << endl << "You chose Is Same Tree?" << endl;
+            explainIsSameTree();
+            cout << endl << "Would you like to view examples of this problem? (1 for Yes | 2 for No):";
+            cin >> choice;
+            if (choice == 1){
+                cout << endl;
+                showExamplesIsSameTree();
+            }
+            cout << endl << "Let's run this algorithm!" << endl;
+            showSameTreeInputs();
+            chooseSameTreeInputs();
+            cout << endl << "Would you like to see the code for this algorithm? (1 for Yes | 2 for No):";
+            cin >> choice;
+            if (choice == 1) {
+                cout << endl;
+                showIsSameTreeCode();
+            }
         }
         else if (choice == 5){
             cout << endl << "You chose Sum Nodes of Tree" << endl;
