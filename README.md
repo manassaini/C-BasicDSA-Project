@@ -16,6 +16,8 @@ Trees: Pre/in/Post Order Traversal, Search in BST, Insert in BST, Is Same Tree, 
 Usage:
 The program gives an explanation on how to run the project. Each algorithm is explained as well. Very easy to use
 
+Project Scope: 3 months, 2750+ lines of code, 90 commits
+
 Credits:
 https://www.geeksforgeeks.org/
 https://leetcode.com/problemset/all/?page=1
